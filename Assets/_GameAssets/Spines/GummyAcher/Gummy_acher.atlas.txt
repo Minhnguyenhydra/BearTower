@@ -1,0 +1,517 @@
+
+Gummy_acher.png
+size: 1880,1556
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Enemy_Lv1/Lforearm
+  rotate: false
+  xy: 1655, 119
+  size: 112, 141
+  orig: 112, 141
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lshin
+  rotate: false
+  xy: 1081, 9
+  size: 121, 122
+  orig: 121, 122
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lthigh
+  rotate: true
+  xy: 1424, 14
+  size: 96, 106
+  orig: 96, 106
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lupperarm
+  rotate: true
+  xy: 1769, 189
+  size: 114, 96
+  orig: 114, 96
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rforearm
+  rotate: true
+  xy: 1752, 2
+  size: 115, 95
+  orig: 115, 95
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rshin
+  rotate: false
+  xy: 1734, 436
+  size: 106, 119
+  orig: 106, 119
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rthigh
+  rotate: true
+  xy: 1768, 305
+  size: 129, 107
+  orig: 129, 107
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rupperarm
+  rotate: false
+  xy: 1532, 10
+  size: 103, 100
+  orig: 103, 100
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/arrow
+  rotate: true
+  xy: 524, 159
+  size: 72, 407
+  orig: 72, 407
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/arrow bag
+  rotate: false
+  xy: 1349, 549
+  size: 273, 208
+  orig: 273, 208
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/body
+  rotate: true
+  xy: 1017, 257
+  size: 216, 255
+  orig: 216, 255
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/bow1
+  rotate: true
+  xy: 2, 190
+  size: 323, 520
+  orig: 323, 520
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/hand
+  rotate: false
+  xy: 1204, 11
+  size: 113, 128
+  orig: 113, 128
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/head
+  rotate: false
+  xy: 2, 1033
+  size: 582, 521
+  orig: 582, 521
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/tail
+  rotate: true
+  xy: 1477, 246
+  size: 187, 159
+  orig: 187, 159
+  offset: 0, 0
+  index: -1
+Lforearm
+  rotate: true
+  xy: 1483, 435
+  size: 112, 141
+  orig: 112, 141
+  offset: 0, 0
+  index: -1
+Lv2/Lforearm
+  rotate: true
+  xy: 1483, 435
+  size: 112, 141
+  orig: 112, 141
+  offset: 0, 0
+  index: -1
+Lv3/Lforearm
+  rotate: true
+  xy: 1483, 435
+  size: 112, 141
+  orig: 112, 141
+  offset: 0, 0
+  index: -1
+Lshin
+  rotate: false
+  xy: 1081, 133
+  size: 121, 122
+  orig: 121, 122
+  offset: 0, 0
+  index: -1
+Lv2/Lshin
+  rotate: false
+  xy: 1081, 133
+  size: 121, 122
+  orig: 121, 122
+  offset: 0, 0
+  index: -1
+Lv3/Lshin
+  rotate: false
+  xy: 1081, 133
+  size: 121, 122
+  orig: 121, 122
+  offset: 0, 0
+  index: -1
+Lthigh
+  rotate: true
+  xy: 1740, 557
+  size: 96, 106
+  orig: 96, 106
+  offset: 0, 0
+  index: -1
+Lv2/Lthigh
+  rotate: true
+  xy: 1740, 557
+  size: 96, 106
+  orig: 96, 106
+  offset: 0, 0
+  index: -1
+Lv3/Lthigh
+  rotate: true
+  xy: 1740, 557
+  size: 96, 106
+  orig: 96, 106
+  offset: 0, 0
+  index: -1
+Lupperarm
+  rotate: false
+  xy: 1624, 557
+  size: 114, 96
+  orig: 114, 96
+  offset: 0, 0
+  index: -1
+Lv2/Lupperarm
+  rotate: false
+  xy: 1624, 557
+  size: 114, 96
+  orig: 114, 96
+  offset: 0, 0
+  index: -1
+Lv3/Lupperarm
+  rotate: false
+  xy: 1624, 557
+  size: 114, 96
+  orig: 114, 96
+  offset: 0, 0
+  index: -1
+Lv2/Crobe
+  rotate: true
+  xy: 1795, 735
+  size: 79, 78
+  orig: 79, 78
+  offset: 0, 0
+  index: -1
+Lv2/Lrobe
+  rotate: false
+  xy: 1274, 141
+  size: 201, 164
+  orig: 201, 164
+  offset: 0, 0
+  index: -1
+Lv2/Rrobe
+  rotate: true
+  xy: 1477, 112
+  size: 132, 176
+  orig: 132, 176
+  offset: 0, 0
+  index: -1
+Lv2/arrow
+  rotate: true
+  xy: 1091, 759
+  size: 98, 407
+  orig: 98, 407
+  offset: 0, 0
+  index: -1
+Lv2/arrow bag
+  rotate: false
+  xy: 1074, 549
+  size: 273, 208
+  orig: 273, 208
+  offset: 0, 0
+  index: -1
+Lv2/body
+  rotate: false
+  xy: 816, 771
+  size: 273, 269
+  orig: 273, 269
+  offset: 0, 0
+  index: -1
+Lv2/bow1
+  rotate: true
+  xy: 1100, 959
+  size: 264, 539
+  orig: 264, 539
+  offset: 0, 0
+  index: -1
+Lv3/Crobe
+  rotate: false
+  xy: 933, 166
+  size: 81, 86
+  orig: 81, 86
+  offset: 0, 0
+  index: -1
+Lv3/Lrobe
+  rotate: false
+  xy: 1274, 307
+  size: 201, 166
+  orig: 201, 166
+  offset: 0, 0
+  index: -1
+Lv3/Rrobe
+  rotate: true
+  xy: 1638, 816
+  size: 132, 176
+  orig: 132, 176
+  offset: 0, 0
+  index: -1
+Lv3/arrow
+  rotate: true
+  xy: 1091, 859
+  size: 98, 430
+  orig: 98, 430
+  offset: 0, 0
+  index: -1
+Lv3/arrow bag
+  rotate: true
+  xy: 1641, 950
+  size: 273, 208
+  orig: 273, 208
+  offset: 0, 0
+  index: -1
+Lv3/body
+  rotate: false
+  xy: 524, 233
+  size: 273, 276
+  orig: 273, 276
+  offset: 0, 0
+  index: -1
+Lv3/bow1
+  rotate: true
+  xy: 1100, 1225
+  size: 329, 567
+  orig: 329, 567
+  offset: 0, 0
+  index: -1
+Rforearm
+  rotate: true
+  xy: 1655, 2
+  size: 115, 95
+  orig: 115, 95
+  offset: 0, 0
+  index: -1
+Lv2/Rforearm
+  rotate: true
+  xy: 1655, 2
+  size: 115, 95
+  orig: 115, 95
+  offset: 0, 0
+  index: -1
+Lv3/Rforearm
+  rotate: true
+  xy: 1655, 2
+  size: 115, 95
+  orig: 115, 95
+  offset: 0, 0
+  index: -1
+Rshin
+  rotate: false
+  xy: 1626, 436
+  size: 106, 119
+  orig: 106, 119
+  offset: 0, 0
+  index: -1
+Lv2/Rshin
+  rotate: false
+  xy: 1626, 436
+  size: 106, 119
+  orig: 106, 119
+  offset: 0, 0
+  index: -1
+Lv3/Rshin
+  rotate: false
+  xy: 1626, 436
+  size: 106, 119
+  orig: 106, 119
+  offset: 0, 0
+  index: -1
+Rthigh
+  rotate: true
+  xy: 415, 59
+  size: 129, 107
+  orig: 129, 107
+  offset: 0, 0
+  index: -1
+Lv2/Rthigh
+  rotate: true
+  xy: 415, 59
+  size: 129, 107
+  orig: 129, 107
+  offset: 0, 0
+  index: -1
+Lv3/Rthigh
+  rotate: true
+  xy: 415, 59
+  size: 129, 107
+  orig: 129, 107
+  offset: 0, 0
+  index: -1
+Rupperarm
+  rotate: false
+  xy: 1319, 39
+  size: 103, 100
+  orig: 103, 100
+  offset: 0, 0
+  index: -1
+Lv2/Rupperarm
+  rotate: false
+  xy: 1319, 39
+  size: 103, 100
+  orig: 103, 100
+  offset: 0, 0
+  index: -1
+Lv3/Rupperarm
+  rotate: false
+  xy: 1319, 39
+  size: 103, 100
+  orig: 103, 100
+  offset: 0, 0
+  index: -1
+VFX/Slh02_1
+  rotate: false
+  xy: 586, 1042
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+VFX/buff
+  rotate: false
+  xy: 816, 513
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+VFX/down0012
+  rotate: false
+  xy: 951, 36
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+VFX/star-1
+  rotate: false
+  xy: 524, 20
+  size: 226, 137
+  orig: 226, 137
+  offset: 0, 0
+  index: -1
+VFX/star-2
+  rotate: true
+  xy: 1638, 262
+  size: 172, 128
+  orig: 172, 128
+  offset: 0, 0
+  index: -1
+VFX/star-3
+  rotate: false
+  xy: 752, 17
+  size: 197, 140
+  orig: 197, 140
+  offset: 0, 0
+  index: -1
+arrow
+  rotate: true
+  xy: 1074, 475
+  size: 72, 407
+  orig: 72, 407
+  offset: 0, 0
+  index: -1
+arrow bag
+  rotate: true
+  xy: 1669, 1281
+  size: 273, 208
+  orig: 273, 208
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 799, 254
+  size: 216, 255
+  orig: 216, 255
+  offset: 0, 0
+  index: -1
+bow1
+  rotate: false
+  xy: 529, 511
+  size: 285, 520
+  orig: 285, 520
+  offset: 0, 0
+  index: -1
+day
+  rotate: true
+  xy: 2, 2
+  size: 186, 411
+  orig: 186, 411
+  offset: 0, 0
+  index: -1
+hand
+  rotate: false
+  xy: 1523, 829
+  size: 113, 128
+  orig: 113, 128
+  offset: 0, 0
+  index: -1
+Lv2/hand
+  rotate: false
+  xy: 1523, 829
+  size: 113, 128
+  orig: 113, 128
+  offset: 0, 0
+  index: -1
+Lv3/hand
+  rotate: false
+  xy: 1523, 829
+  size: 113, 128
+  orig: 113, 128
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 515
+  size: 525, 516
+  orig: 525, 516
+  offset: 0, 0
+  index: -1
+Lv2/head
+  rotate: false
+  xy: 2, 515
+  size: 525, 516
+  orig: 525, 516
+  offset: 0, 0
+  index: -1
+Lv3/head
+  rotate: false
+  xy: 2, 515
+  size: 525, 516
+  orig: 525, 516
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 1624, 655
+  size: 169, 159
+  orig: 169, 159
+  offset: 0, 0
+  index: -1
+Lv2/tail
+  rotate: false
+  xy: 1624, 655
+  size: 169, 159
+  orig: 169, 159
+  offset: 0, 0
+  index: -1
+Lv3/tail
+  rotate: false
+  xy: 1624, 655
+  size: 169, 159
+  orig: 169, 159
+  offset: 0, 0
+  index: -1

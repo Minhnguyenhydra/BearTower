@@ -1,0 +1,356 @@
+
+HardySwordman.png
+size: 1864,1320
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Enemy_Lv1/Lforearm
+  rotate: true
+  xy: 422, 7
+  size: 113, 138
+  orig: 113, 138
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lshin
+  rotate: false
+  xy: 1730, 58
+  size: 104, 103
+  orig: 104, 103
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lthigh
+  rotate: false
+  xy: 1397, 909
+  size: 88, 99
+  orig: 88, 99
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lupperarm
+  rotate: true
+  xy: 1730, 163
+  size: 115, 117
+  orig: 115, 117
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rforearm
+  rotate: true
+  xy: 1251, 21
+  size: 171, 129
+  orig: 171, 129
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rshin
+  rotate: true
+  xy: 593, 727
+  size: 93, 110
+  orig: 93, 110
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rthigh
+  rotate: false
+  xy: 810, 723
+  size: 103, 97
+  orig: 103, 97
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rupperarm
+  rotate: true
+  xy: 1504, 264
+  size: 122, 113
+  orig: 122, 113
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Sword 1
+  rotate: false
+  xy: 2, 719
+  size: 477, 597
+  orig: 477, 597
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/body
+  rotate: false
+  xy: 1382, 35
+  size: 346, 227
+  orig: 346, 227
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/head
+  rotate: true
+  xy: 481, 822
+  size: 494, 457
+  orig: 494, 457
+  offset: 0, 0
+  index: -1
+Lforearm
+  rotate: true
+  xy: 282, 7
+  size: 113, 138
+  orig: 113, 138
+  offset: 0, 0
+  index: -1
+Lshin
+  rotate: false
+  xy: 1756, 418
+  size: 104, 103
+  orig: 104, 103
+  offset: 0, 0
+  index: -1
+Lv2/Lshin
+  rotate: false
+  xy: 1756, 418
+  size: 104, 103
+  orig: 104, 103
+  offset: 0, 0
+  index: -1
+Lv3/Lshin
+  rotate: false
+  xy: 1756, 418
+  size: 104, 103
+  orig: 104, 103
+  offset: 0, 0
+  index: -1
+Lthigh
+  rotate: true
+  xy: 915, 732
+  size: 88, 99
+  orig: 88, 99
+  offset: 0, 0
+  index: -1
+Lv2/Lthigh
+  rotate: true
+  xy: 915, 732
+  size: 88, 99
+  orig: 88, 99
+  offset: 0, 0
+  index: -1
+Lv3/Lthigh
+  rotate: true
+  xy: 915, 732
+  size: 88, 99
+  orig: 88, 99
+  offset: 0, 0
+  index: -1
+Lupperarm
+  rotate: false
+  xy: 1619, 280
+  size: 115, 117
+  orig: 115, 117
+  offset: 0, 0
+  index: -1
+Lv2/Lforearm
+  rotate: true
+  xy: 2, 2
+  size: 118, 138
+  orig: 118, 138
+  offset: 0, 0
+  index: -1
+Lv2/Lupperarm
+  rotate: false
+  xy: 1639, 404
+  size: 115, 117
+  orig: 115, 117
+  offset: 0, 0
+  index: -1
+Lv2/Rforearm
+  rotate: true
+  xy: 1120, 21
+  size: 171, 129
+  orig: 171, 129
+  offset: 0, 0
+  index: -1
+Lv2/Rupperarm
+  rotate: true
+  xy: 1389, 264
+  size: 122, 113
+  orig: 122, 113
+  offset: 0, 0
+  index: -1
+Lv2/Sword 1
+  rotate: false
+  xy: 454, 155
+  size: 408, 562
+  orig: 408, 562
+  offset: 0, 0
+  index: -1
+Lv2/body
+  rotate: true
+  xy: 1397, 1010
+  size: 306, 241
+  orig: 306, 241
+  offset: 0, 0
+  index: -1
+Lv3/Lforearm
+  rotate: true
+  xy: 142, 2
+  size: 118, 138
+  orig: 118, 138
+  offset: 0, 0
+  index: -1
+Lv3/Lupperarm
+  rotate: false
+  xy: 1736, 285
+  size: 115, 117
+  orig: 115, 117
+  offset: 0, 0
+  index: -1
+Lv3/Rforearm
+  rotate: false
+  xy: 1016, 728
+  size: 171, 129
+  orig: 171, 129
+  offset: 0, 0
+  index: -1
+Lv3/Rupperarm
+  rotate: true
+  xy: 1524, 399
+  size: 122, 113
+  orig: 122, 113
+  offset: 0, 0
+  index: -1
+Lv3/Sword 1
+  rotate: false
+  xy: 2, 122
+  size: 450, 595
+  orig: 450, 595
+  offset: 0, 0
+  index: -1
+Lv3/body
+  rotate: true
+  xy: 1274, 388
+  size: 339, 248
+  orig: 339, 248
+  offset: 0, 0
+  index: -1
+Rforearm
+  rotate: true
+  xy: 989, 21
+  size: 171, 129
+  orig: 171, 129
+  offset: 0, 0
+  index: -1
+Rshin
+  rotate: true
+  xy: 481, 727
+  size: 93, 110
+  orig: 93, 110
+  offset: 0, 0
+  index: -1
+Lv2/Rshin
+  rotate: true
+  xy: 481, 727
+  size: 93, 110
+  orig: 93, 110
+  offset: 0, 0
+  index: -1
+Lv3/Rshin
+  rotate: true
+  xy: 481, 727
+  size: 93, 110
+  orig: 93, 110
+  offset: 0, 0
+  index: -1
+Rthigh
+  rotate: false
+  xy: 705, 723
+  size: 103, 97
+  orig: 103, 97
+  offset: 0, 0
+  index: -1
+Lv2/Rthigh
+  rotate: false
+  xy: 705, 723
+  size: 103, 97
+  orig: 103, 97
+  offset: 0, 0
+  index: -1
+Lv3/Rthigh
+  rotate: false
+  xy: 705, 723
+  size: 103, 97
+  orig: 103, 97
+  offset: 0, 0
+  index: -1
+Rupperarm
+  rotate: true
+  xy: 1274, 264
+  size: 122, 113
+  orig: 122, 113
+  offset: 0, 0
+  index: -1
+Sword 1
+  rotate: false
+  xy: 864, 194
+  size: 408, 527
+  orig: 408, 527
+  offset: 0, 0
+  index: -1
+VFX/buff
+  rotate: false
+  xy: 1524, 523
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+VFX/down0012
+  rotate: false
+  xy: 1363, 729
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+VFX/skll2_attack2
+  rotate: true
+  xy: 1640, 1085
+  size: 231, 214
+  orig: 231, 214
+  offset: 0, 0
+  index: -1
+VFX/star-1
+  rotate: false
+  xy: 562, 16
+  size: 226, 137
+  orig: 226, 137
+  offset: 0, 0
+  index: -1
+VFX/star-2
+  rotate: false
+  xy: 1189, 729
+  size: 172, 128
+  orig: 172, 128
+  offset: 0, 0
+  index: -1
+VFX/star-3
+  rotate: false
+  xy: 790, 13
+  size: 197, 140
+  orig: 197, 140
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 1493, 781
+  size: 295, 227
+  orig: 295, 227
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 940, 859
+  size: 455, 457
+  orig: 455, 457
+  offset: 0, 0
+  index: -1
+Lv2/head
+  rotate: false
+  xy: 940, 859
+  size: 455, 457
+  orig: 455, 457
+  offset: 0, 0
+  index: -1
+Lv3/head
+  rotate: false
+  xy: 940, 859
+  size: 455, 457
+  orig: 455, 457
+  offset: 0, 0
+  index: -1

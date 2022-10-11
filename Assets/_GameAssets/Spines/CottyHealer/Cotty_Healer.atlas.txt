@@ -1,0 +1,405 @@
+
+Cotty_Healer.png
+size: 2036,1380
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Enemy_Lv1/Head
+  rotate: false
+  xy: 890, 769
+  size: 469, 609
+  orig: 469, 609
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lbook
+  rotate: false
+  xy: 856, 240
+  size: 307, 225
+  orig: 307, 225
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lshin
+  rotate: true
+  xy: 1705, 2
+  size: 103, 111
+  orig: 103, 111
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lthigh
+  rotate: false
+  xy: 761, 90
+  size: 92, 106
+  orig: 92, 106
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Luparm
+  rotate: true
+  xy: 1189, 408
+  size: 131, 133
+  orig: 131, 133
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rforearm
+  rotate: true
+  xy: 1475, 233
+  size: 167, 105
+  orig: 167, 105
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rshin
+  rotate: true
+  xy: 1928, 10
+  size: 95, 106
+  orig: 95, 106
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rthigh
+  rotate: true
+  xy: 1462, 10
+  size: 103, 108
+  orig: 103, 108
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rupperarm
+  rotate: false
+  xy: 1731, 216
+  size: 147, 115
+  orig: 147, 115
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Staff
+  rotate: false
+  xy: 2, 603
+  size: 415, 775
+  orig: 415, 775
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/body
+  rotate: true
+  xy: 1586, 333
+  size: 237, 243
+  orig: 237, 243
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 419, 769
+  size: 469, 609
+  orig: 469, 609
+  offset: 0, 0
+  index: -1
+Lv2/Head
+  rotate: false
+  xy: 419, 769
+  size: 469, 609
+  orig: 469, 609
+  offset: 0, 0
+  index: -1
+Lv3/Head
+  rotate: false
+  xy: 419, 769
+  size: 469, 609
+  orig: 469, 609
+  offset: 0, 0
+  index: -1
+Lbook
+  rotate: false
+  xy: 1640, 572
+  size: 294, 205
+  orig: 294, 205
+  offset: 0, 0
+  index: -1
+Lshin
+  rotate: true
+  xy: 1231, 2
+  size: 85, 111
+  orig: 85, 111
+  offset: 0, 0
+  index: -1
+Lv2/Lshin
+  rotate: true
+  xy: 1231, 2
+  size: 85, 111
+  orig: 85, 111
+  offset: 0, 0
+  index: -1
+Lv3/Lshin
+  rotate: true
+  xy: 1231, 2
+  size: 85, 111
+  orig: 85, 111
+  offset: 0, 0
+  index: -1
+Lthigh
+  rotate: false
+  xy: 667, 90
+  size: 92, 106
+  orig: 92, 106
+  offset: 0, 0
+  index: -1
+Lv2/Lthigh
+  rotate: false
+  xy: 667, 90
+  size: 92, 106
+  orig: 92, 106
+  offset: 0, 0
+  index: -1
+Lv3/Lthigh
+  rotate: false
+  xy: 667, 90
+  size: 92, 106
+  orig: 92, 106
+  offset: 0, 0
+  index: -1
+Luparm
+  rotate: false
+  xy: 276, 468
+  size: 131, 133
+  orig: 131, 133
+  offset: 0, 0
+  index: -1
+Lv2/Lbook
+  rotate: false
+  xy: 276, 189
+  size: 296, 276
+  orig: 296, 276
+  offset: 0, 0
+  index: -1
+Lv2/Luparm
+  rotate: true
+  xy: 1321, 268
+  size: 132, 152
+  orig: 132, 152
+  offset: 0, 0
+  index: -1
+Lv2/Rupperarm
+  rotate: true
+  xy: 1338, 116
+  size: 150, 126
+  orig: 150, 126
+  offset: 0, 0
+  index: -1
+Lv2/Staff
+  rotate: false
+  xy: 1361, 660
+  size: 277, 718
+  orig: 277, 718
+  offset: 0, 0
+  index: -1
+Lv2/body
+  rotate: false
+  xy: 574, 198
+  size: 280, 267
+  orig: 280, 267
+  offset: 0, 0
+  index: -1
+Lv3/Lbook
+  rotate: false
+  xy: 1640, 1048
+  size: 353, 330
+  orig: 353, 330
+  offset: 0, 0
+  index: -1
+Lv3/Luparm
+  rotate: false
+  xy: 276, 2
+  size: 143, 185
+  orig: 143, 185
+  offset: 0, 0
+  index: -1
+Lv3/Rforearm
+  rotate: true
+  xy: 421, 9
+  size: 178, 135
+  orig: 178, 135
+  offset: 0, 0
+  index: -1
+Lv3/Rupperarm
+  rotate: false
+  xy: 1165, 258
+  size: 154, 148
+  orig: 154, 148
+  offset: 0, 0
+  index: -1
+Lv3/Staff
+  rotate: true
+  xy: 419, 467
+  size: 300, 768
+  orig: 300, 768
+  offset: 0, 0
+  index: -1
+Lv3/body
+  rotate: false
+  xy: 1640, 779
+  size: 308, 267
+  orig: 308, 267
+  offset: 0, 0
+  index: -1
+Rforearm
+  rotate: true
+  xy: 1231, 89
+  size: 167, 105
+  orig: 167, 105
+  offset: 0, 0
+  index: -1
+Lv2/Rforearm
+  rotate: true
+  xy: 1231, 89
+  size: 167, 105
+  orig: 167, 105
+  offset: 0, 0
+  index: -1
+Rshin
+  rotate: true
+  xy: 667, 3
+  size: 85, 105
+  orig: 85, 105
+  offset: 0, 0
+  index: -1
+Lv2/Rshin
+  rotate: true
+  xy: 667, 3
+  size: 85, 105
+  orig: 85, 105
+  offset: 0, 0
+  index: -1
+Lv3/Rshin
+  rotate: true
+  xy: 667, 3
+  size: 85, 105
+  orig: 85, 105
+  offset: 0, 0
+  index: -1
+Rthigh
+  rotate: true
+  xy: 1818, 2
+  size: 103, 108
+  orig: 103, 108
+  offset: 0, 0
+  index: -1
+Lv2/Rthigh
+  rotate: true
+  xy: 1818, 2
+  size: 103, 108
+  orig: 103, 108
+  offset: 0, 0
+  index: -1
+Lv3/Rthigh
+  rotate: true
+  xy: 1818, 2
+  size: 103, 108
+  orig: 103, 108
+  offset: 0, 0
+  index: -1
+Rupperarm
+  rotate: false
+  xy: 1582, 216
+  size: 147, 115
+  orig: 147, 115
+  offset: 0, 0
+  index: -1
+Staff
+  rotate: false
+  xy: 2, 12
+  size: 272, 589
+  orig: 272, 589
+  offset: 0, 0
+  index: -1
+VFX/Comp 42/attack_00000
+  rotate: true
+  xy: 1466, 115
+  size: 116, 107
+  orig: 116, 107
+  offset: 0, 0
+  index: -1
+VFX/Comp 42/attack_00001
+  rotate: true
+  xy: 1466, 115
+  size: 116, 107
+  orig: 116, 107
+  offset: 0, 0
+  index: -1
+VFX/Comp 42/attack_00002
+  rotate: false
+  xy: 1705, 107
+  size: 116, 107
+  orig: 116, 107
+  offset: 0, 0
+  index: -1
+VFX/Comp 42/attack_00003
+  rotate: false
+  xy: 1823, 107
+  size: 116, 107
+  orig: 116, 107
+  offset: 0, 0
+  index: -1
+VFX/Comp 42/attack_00004
+  rotate: false
+  xy: 1344, 7
+  size: 116, 107
+  orig: 116, 107
+  offset: 0, 0
+  index: -1
+VFX/Comp 42/attack_00005
+  rotate: true
+  xy: 1880, 255
+  size: 116, 107
+  orig: 116, 107
+  offset: 0, 0
+  index: -1
+VFX/Comp 42/attack_00006
+  rotate: true
+  xy: 1880, 255
+  size: 116, 107
+  orig: 116, 107
+  offset: 0, 0
+  index: -1
+VFX/Comp 42/attack_00007
+  rotate: true
+  xy: 558, 71
+  size: 116, 107
+  orig: 116, 107
+  offset: 0, 0
+  index: -1
+VFX/buff
+  rotate: false
+  xy: 1328, 402
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+VFX/down0012
+  rotate: false
+  xy: 1575, 86
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+VFX/star-1
+  rotate: true
+  xy: 1189, 541
+  size: 226, 137
+  orig: 226, 137
+  offset: 0, 0
+  index: -1
+VFX/star-2
+  rotate: true
+  xy: 1101, 66
+  size: 172, 128
+  orig: 172, 128
+  offset: 0, 0
+  index: -1
+VFX/star-3
+  rotate: true
+  xy: 1831, 373
+  size: 197, 140
+  orig: 197, 140
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 856, 2
+  size: 236, 243
+  orig: 236, 243
+  offset: 0, 0
+  index: -1

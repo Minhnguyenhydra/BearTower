@@ -1,0 +1,370 @@
+
+Choco_tanker.png
+size: 2020,1296
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Enemy_Lv1/Lforearm
+  rotate: false
+  xy: 1914, 1166
+  size: 104, 128
+  orig: 104, 128
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lshin
+  rotate: false
+  xy: 356, 5
+  size: 105, 98
+  orig: 105, 98
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lthigh
+  rotate: true
+  xy: 1914, 867
+  size: 85, 97
+  orig: 85, 97
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Lupperarm
+  rotate: true
+  xy: 1905, 222
+  size: 107, 112
+  orig: 107, 112
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rforearm
+  rotate: true
+  xy: 1169, 13
+  size: 137, 116
+  orig: 137, 116
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rshin
+  rotate: true
+  xy: 1905, 131
+  size: 89, 105
+  orig: 89, 105
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rthigh
+  rotate: true
+  xy: 270, 3
+  size: 100, 84
+  orig: 100, 84
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/Rupperarm
+  rotate: false
+  xy: 2, 2
+  size: 90, 101
+  orig: 90, 101
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/body
+  rotate: true
+  xy: 1383, 722
+  size: 274, 247
+  orig: 274, 247
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/head
+  rotate: true
+  xy: 462, 708
+  size: 586, 509
+  orig: 586, 509
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/lance 1
+  rotate: false
+  xy: 2, 105
+  size: 464, 592
+  orig: 464, 592
+  offset: 0, 0
+  index: -1
+Enemy_Lv1/shield
+  rotate: false
+  xy: 1403, 504
+  size: 219, 216
+  orig: 219, 216
+  offset: 0, 0
+  index: -1
+Lforearm
+  rotate: false
+  xy: 1914, 1041
+  size: 104, 123
+  orig: 104, 123
+  offset: 0, 0
+  index: -1
+Lshin
+  rotate: false
+  xy: 463, 5
+  size: 104, 98
+  orig: 104, 98
+  offset: 0, 0
+  index: -1
+Lv2/Lshin
+  rotate: false
+  xy: 463, 5
+  size: 104, 98
+  orig: 104, 98
+  offset: 0, 0
+  index: -1
+Lv3/Lshin
+  rotate: false
+  xy: 463, 5
+  size: 104, 98
+  orig: 104, 98
+  offset: 0, 0
+  index: -1
+Lthigh
+  rotate: true
+  xy: 1914, 954
+  size: 85, 97
+  orig: 85, 97
+  offset: 0, 0
+  index: -1
+Lv2/Lthigh
+  rotate: true
+  xy: 1914, 954
+  size: 85, 97
+  orig: 85, 97
+  offset: 0, 0
+  index: -1
+Lv3/Lthigh
+  rotate: true
+  xy: 1914, 954
+  size: 85, 97
+  orig: 85, 97
+  offset: 0, 0
+  index: -1
+Lupperarm
+  rotate: false
+  xy: 1796, 217
+  size: 107, 112
+  orig: 107, 112
+  offset: 0, 0
+  index: -1
+Lv2/Lforearm
+  rotate: false
+  xy: 1693, 35
+  size: 110, 123
+  orig: 110, 123
+  offset: 0, 0
+  index: -1
+Lv2/Lupperarm
+  rotate: false
+  xy: 1389, 375
+  size: 126, 127
+  orig: 126, 127
+  offset: 0, 0
+  index: -1
+Lv2/Rforearm
+  rotate: false
+  xy: 1871, 630
+  size: 137, 114
+  orig: 137, 114
+  offset: 0, 0
+  index: -1
+Lv2/Rupperarm
+  rotate: false
+  xy: 1914, 746
+  size: 94, 119
+  orig: 94, 119
+  offset: 0, 0
+  index: -1
+Lv2/body
+  rotate: true
+  xy: 1656, 800
+  size: 236, 256
+  orig: 236, 256
+  offset: 0, 0
+  index: -1
+Lv2/lance 1
+  rotate: false
+  xy: 973, 769
+  size: 408, 525
+  orig: 408, 525
+  offset: 0, 0
+  index: -1
+Lv2/shield
+  rotate: false
+  xy: 1389, 152
+  size: 194, 194
+  orig: 194, 194
+  offset: 0, 0
+  index: -1
+Lv3/Lupperarm
+  rotate: true
+  xy: 996, 6
+  size: 144, 171
+  orig: 144, 171
+  offset: 0, 0
+  index: -1
+Lv3/Rforearm
+  rotate: false
+  xy: 1403, 14
+  size: 158, 136
+  orig: 158, 136
+  offset: 0, 0
+  index: -1
+Lv3/Rupperarm
+  rotate: false
+  xy: 1871, 461
+  size: 136, 167
+  orig: 136, 167
+  offset: 0, 0
+  index: -1
+Lv3/body
+  rotate: false
+  xy: 1383, 998
+  size: 271, 296
+  orig: 271, 296
+  offset: 0, 0
+  index: -1
+Lv3/lance 1
+  rotate: false
+  xy: 946, 152
+  size: 441, 554
+  orig: 441, 554
+  offset: 0, 0
+  index: -1
+Lv3/shield
+  rotate: true
+  xy: 1585, 160
+  size: 186, 209
+  orig: 186, 209
+  offset: 0, 0
+  index: -1
+Rforearm
+  rotate: true
+  xy: 1287, 13
+  size: 137, 114
+  orig: 137, 114
+  offset: 0, 0
+  index: -1
+Rshin
+  rotate: true
+  xy: 1517, 413
+  size: 89, 105
+  orig: 89, 105
+  offset: 0, 0
+  index: -1
+Lv2/Rshin
+  rotate: true
+  xy: 1517, 413
+  size: 89, 105
+  orig: 89, 105
+  offset: 0, 0
+  index: -1
+Lv3/Rshin
+  rotate: true
+  xy: 1517, 413
+  size: 89, 105
+  orig: 89, 105
+  offset: 0, 0
+  index: -1
+Rthigh
+  rotate: true
+  xy: 184, 3
+  size: 100, 84
+  orig: 100, 84
+  offset: 0, 0
+  index: -1
+Lv2/Rthigh
+  rotate: true
+  xy: 184, 3
+  size: 100, 84
+  orig: 100, 84
+  offset: 0, 0
+  index: -1
+Lv3/Rthigh
+  rotate: true
+  xy: 184, 3
+  size: 100, 84
+  orig: 100, 84
+  offset: 0, 0
+  index: -1
+Rupperarm
+  rotate: false
+  xy: 94, 3
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: -1
+VFX/buff
+  rotate: false
+  xy: 1656, 1038
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+VFX/down0012
+  rotate: false
+  xy: 1563, 22
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+VFX/star-1
+  rotate: false
+  xy: 768, 6
+  size: 226, 137
+  orig: 226, 137
+  offset: 0, 0
+  index: -1
+VFX/star-2
+  rotate: false
+  xy: 1844, 331
+  size: 172, 128
+  orig: 172, 128
+  offset: 0, 0
+  index: -1
+VFX/star-3
+  rotate: false
+  xy: 569, 3
+  size: 197, 140
+  orig: 197, 140
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 1632, 565
+  size: 233, 237
+  orig: 233, 237
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 468, 145
+  size: 561, 476
+  orig: 561, 476
+  offset: 0, 0
+  index: -1
+Lv2/head
+  rotate: true
+  xy: 468, 145
+  size: 561, 476
+  orig: 561, 476
+  offset: 0, 0
+  index: -1
+Lv3/head
+  rotate: true
+  xy: 468, 145
+  size: 561, 476
+  orig: 561, 476
+  offset: 0, 0
+  index: -1
+lance 1
+  rotate: false
+  xy: 2, 699
+  size: 458, 595
+  orig: 458, 595
+  offset: 0, 0
+  index: -1
+shield
+  rotate: false
+  xy: 1624, 348
+  size: 218, 215
+  orig: 218, 215
+  offset: 0, 0
+  index: -1
