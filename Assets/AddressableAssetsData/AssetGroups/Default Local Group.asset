@@ -37,6 +37,10 @@ MonoBehaviour:
     m_Address: TopCanvas
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: d5fbba7322143ee43b5070677583cb04
+    m_Address: FlyTextPrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f00747e82daa65c48bcdc00d8d5fc605, type: 2}
   m_SchemaSet:

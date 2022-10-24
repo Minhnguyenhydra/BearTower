@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f808fd930cf8802408c3d5ccc0353e62, type: 3}
+  m_Name: DBM
+  m_EditorClassIdentifier: 
+  config:
+    listHero:
+    - icon: {fileID: 21300000, guid: 434291000a9616e44b4dd55e4a2fe1e3, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: 81195d2dd168cee4f862a5d0b4ed9973,
+        type: 3}
+      timeTraining: 2
+      priceGoldTraining: 50
+      priceManaTraining: 0
+    - icon: {fileID: 21300000, guid: d22803422e064e146b5ff7abf08d7683, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: 3fcb0bd8c298c434999c548a5fdc105b,
+        type: 3}
+      timeTraining: 2
+      priceGoldTraining: 80
+      priceManaTraining: 0
+    - icon: {fileID: 21300000, guid: 071460795786dfc4dbbdd4f483ca25fe, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: 0e24678ce9f3c3e4682f2db99e40c082,
+        type: 3}
+      timeTraining: 1
+      priceGoldTraining: 80
+      priceManaTraining: 10
+    - icon: {fileID: 21300000, guid: 8ef8c13b58fb5e84ca00968f8f540ea3, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: 1f623c13612a6a2458b46c53f8ef578d,
+        type: 3}
+      timeTraining: 1
+      priceGoldTraining: 100
+      priceManaTraining: 50
+    - icon: {fileID: 21300000, guid: cb74032f9adc22e4d96e488623a2b502, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: fdc08a24d3f1003419d941471eeb0278,
+        type: 3}
+      timeTraining: 1
+      priceGoldTraining: 100
+      priceManaTraining: 0
+  initUserData:
+    listHeroUserData: []
