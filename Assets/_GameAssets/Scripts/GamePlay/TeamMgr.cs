@@ -1,7 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _GameAssets.Scripts;
 using DG.Tweening;
 using MonsterLove.StateMachine;
 using Sirenix.OdinInspector;
@@ -18,6 +18,14 @@ public class TeamMgr : MonoBehaviour
         Attack
     }
     public StateMachine<State> fsm;
+
+    [ShowInInspector]
+    public State CurState
+    {
+        get => fsm!=null?fsm.State:State.Back;
+        set => fsm.ChangeState(value);
+    }
+
     [SerializeField,HideInInspector] private float gold=500;
     public Action onGoldChange;
     [ShowInInspector]
@@ -52,13 +60,40 @@ public class TeamMgr : MonoBehaviour
     
     public List<TrainingProcess> trainingProcesses = new List<TrainingProcess>();
     [SerializeField] private HUDPanel hudPanel; //là tự điều khiển
-    private ITeamControl TeamControl => hudPanel;
+    private ITeamControl _teamControl;
 
+    private ITeamControl TeamControl
+    {
+        get
+        {
+            if (_teamControl == null) _teamControl = hudPanel != null ? hudPanel : GetComponent<AIHandle>();
+            return _teamControl;
+        }
+    }
+
+    public readonly Dictionary<State, Vector2> RangeFindEnemy = new Dictionary<State, Vector2>();
+    public readonly List<Unit> EnemiesInRange = new List<Unit>();
+    public float FaceDirection => castle.transform.GetChild(0).localScale.x;
     private void Awake()
     {
         fsm = new StateMachine<State>(this);
         fsm.ChangeState(State.Back);
-        fsm.Changed+=TeamStateChanged;
+        fsm.Changed += TeamStateChanged;
+    }
+
+    private void Update()
+    {
+        if (RangeFindEnemy.Count != 0 && Time.frameCount % 20 == 0)
+        {
+            EnemiesInRange.Clear();
+            foreach (var hero in enemyTeam.listHero.Where(
+                hero => hero.InRange(RangeFindEnemy[CurState])))
+                EnemiesInRange.Add(hero);
+            if (enemyTeam.fence!=null && enemyTeam.fence.Hp > 0 && enemyTeam.fence.InRange(RangeFindEnemy[CurState]))
+                EnemiesInRange.Add(enemyTeam.fence);
+            if (enemyTeam.castle!=null && enemyTeam.castle.Hp > 0 && enemyTeam.castle.InRange(RangeFindEnemy[CurState]))
+                EnemiesInRange.Add(enemyTeam.castle);
+        }
     }
 
     private void OnDestroy()
@@ -68,6 +103,7 @@ public class TeamMgr : MonoBehaviour
 
     private void TeamStateChanged(State curState)
     {
+        EnemiesInRange.Clear();
         SetupIdlePosition();
     }
 
@@ -76,15 +112,30 @@ public class TeamMgr : MonoBehaviour
         foreach (var heroConfig in DBM.Config.HeroConfigs.Values)
             trainingProcesses.Add(new TrainingProcess(this, heroConfig));
         SpawnInitMiner(2);
-        if (TeamControl != null)
-        {
-            TeamControl.Team = this;
-            TeamControl.Setup();
-        }
+        TeamControl.Team = this;
+        TeamControl.Setup();
+        InitRangeFindEnemy();
         fsm.ChangeState(State.Defense);
         AutoIncMana();
     }
 
+    private void InitRangeFindEnemy()
+    {
+        foreach (var state in Enum.GetValues(typeof(State)).Cast<State>())
+        {
+            var p1 = castle.transform.position.x;
+            var manaPool = GamePlayMgr.Instance.manaPool;
+            var p2 = state switch
+            {
+                State.Defense => manaPool.transform.position.x - manaPool.range * FaceDirection,
+                State.TakeManaPool => manaPool.transform.position.x + manaPool.range * FaceDirection,
+                _ => enemyTeam.castle.transform.position.x
+            };
+            RangeFindEnemy.Add(state, new Vector2(Mathf.Min(p1, p2), Mathf.Max(p1, p2)));
+            Debug.Log(state+":"+ RangeFindEnemy[state]);
+        }
+    }
+    
     private void AutoIncMana()
     {
         DOTween.Sequence().AppendInterval(1).AppendCallback(() => Mana += 10).SetLoops(-1);
@@ -117,7 +168,7 @@ public class TeamMgr : MonoBehaviour
 
     private void SetupIdlePosition()
     {
-        if (fsm.State == State.Defense)
+        if (CurState is State.Defense or State.TakeManaPool)
         {
             var dictHero = new Dictionary<Hero.AttackType, List<Hero>>
             {
@@ -145,17 +196,30 @@ public class TeamMgr : MonoBehaviour
 
                     for (var col = 0; col < numOfCol; col++)
                     {
-                        var offSet = new Vector3(-(curRow+2) * spaceRow+col*spaceCol/2f,  maxCol * spaceCol*(1f*col  / numOfCol-0.5f), 0);
-                        heroes[row * maxCol + col].idlePosition = fence.transform.position + fence.transform.GetChild(0).localScale.x * offSet;
+                        var offSet =
+                            new Vector3(-(curRow + 2) * spaceRow + FaceDirection*col * spaceCol / 2f,
+                                maxCol * spaceCol * (1f * col / numOfCol - 0.5f), 0);
+                        heroes[row * maxCol + col].idlePosition = (CurState is State.TakeManaPool ? GamePlayMgr.Instance.manaPool.transform.position : fence.transform.position) + FaceDirection * offSet;
                     }
+
                     curRow++;
                 }
             }
         }
-        else
+        else if (CurState is State.Back)
         {
             foreach (var hero in listHero)
                 hero.idlePosition = castle.transform.position;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (RangeFindEnemy.Count > 0 && fsm!=null)
+        {
+            var size = RangeFindEnemy[CurState].y - RangeFindEnemy[CurState].x;
+            Gizmos.color = name.Contains("Ally") ? Color.blue : Color.red;
+            Gizmos.DrawWireCube(new Vector3(size / 2+RangeFindEnemy[CurState].x, 0, 0), new Vector3(size, 10, 0));
         }
     }
 }

@@ -24,7 +24,7 @@ public class Unit : MonoBehaviour
         Attack,
         Dead,
     }
-    protected StateMachine<State, Driver> fsm;
+    public StateMachine<State, Driver> fsm;
     protected virtual void Awake()
     {
         fsm = new StateMachine<State, Driver>(this);
@@ -57,7 +57,7 @@ public class Unit : MonoBehaviour
     #endregion
     
     public TeamMgr team;
-    [SerializeField] private Slider hpSlider;
+    [SerializeField] private Transform hpSlider;
     [SerializeField,HideInInspector] private float hp;
     [ShowInInspector]
     public float Hp
@@ -69,7 +69,7 @@ public class Unit : MonoBehaviour
             if (hpSlider != null)
             {
                 hpSlider.gameObject.SetActive(hp < maxHp.Value);
-                hpSlider.value = hp / maxHp.Value;
+                hpSlider.GetChild(0).DOScaleX(hp / maxHp.Value, 0.1f);
             }
         }
     }
@@ -85,6 +85,11 @@ public class Unit : MonoBehaviour
         this.maxHp = new CharacterStat(maxHp);
         Hp = this.maxHp.Value;
         fsm.ChangeState(State.Idle);
+    }
+
+    protected virtual void OnDestroy()
+    {
+        this.team.fsm.Changed-=TeamStateOnChanged;
     }
 
     protected virtual void TeamStateOnChanged(TeamMgr.State curState)

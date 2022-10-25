@@ -1,6 +1,6 @@
-using System;
 using Kryz.CharacterStats;
 using Lean.Pool;
+using Sirenix.OdinInspector;
 using Spine.Unity;
 using UnityEngine;
 
@@ -15,79 +15,132 @@ public class Hero : Unit
     protected bool IsStandAtIdlePosition => Vector3.Distance(transform.position, idlePosition) < 0.1f;
     public AttackType attackType = AttackType.Melee;
     public CharacterStat moveSpeed = new CharacterStat(5);
-    [SerializeField] private SkeletonAnimation _anim;
-    [SpineAnimation] public string idle;
-    [SpineAnimation] public string attack;
-    [SpineAnimation] public string move;
-    [SpineAnimation] public string hit;
-    [SpineAnimation] public string die;
-    
+    [SerializeField] private SkeletonAnimation anim;
+    [SpineAnimation,SerializeField] private string idle;
+    [SpineAnimation,SerializeField] private string attack;
+    [SpineAnimation,SerializeField] private string move;
+    [SpineAnimation,SerializeField] private string hit;
+    [SpineAnimation,SerializeField] private string die;
+    protected Unit curTarget;
+
+    [SerializeField] private float attackAnimDuration = 1.5f;
+    [SerializeField,Range(0,1)] private float attackAnimEvent=0.6f;
+    protected float lastTimeStartAttack;
+    protected bool isAttacked;
+    protected bool IsAttacking=>Time.time-lastTimeStartAttack<attackAnimDuration / atkSpeed.Value;
     protected override void Idle_Enter()
     {
-        _anim.AnimationState.SetAnimation(0, idle, true);
-        transform.GetChild(0).localScale = new Vector3(-team.castle.transform.GetChild(0).localScale.x, 1, 1);
+        anim.timeScale = 1;
+        anim.AnimationState.SetAnimation(0, idle, true);
+        transform.GetChild(0).localScale = new Vector3(-team.FaceDirection, 1, 1);
     }
     protected override void Idle_Update()
     {
-        if (team.fsm.State is TeamMgr.State.Back or TeamMgr.State.Defense && !IsStandAtIdlePosition
-            || team.fsm.State is TeamMgr.State.Attack)
-        {
+        curTarget = FindTarget();
+        if (curTarget != null || !IsStandAtIdlePosition)
             fsm.ChangeState(State.Move);
-        }
     }
     protected override void Move_Enter()
     {
-        _anim.AnimationState.SetAnimation(0, move, true);
+        anim.timeScale = 1;
+        anim.AnimationState.SetAnimation(0, move, true);
     }
 
     protected override void Move_Update()
     {
-        if (team.fsm.State is TeamMgr.State.Back or TeamMgr.State.Defense)
+        curTarget = FindTarget();
+        if (curTarget != null && team.CurState is not TeamMgr.State.Back)
+        {
+            if (MoveToPos(curTarget.transform.position, atkRange.Value - 0.5f))
+                fsm.ChangeState(State.Attack);
+        }
+        else
         {
             if (MoveToPos(idlePosition))
-            {
                 fsm.ChangeState(State.Idle);
-            }
-        }
-        if (team.fsm.State is TeamMgr.State.Attack)
-        {
-            if (MoveToPos(team.enemyTeam.castle.transform.position))
-            {
-                fsm.ChangeState(State.Attack);
-            }
         }
     }
 
-    protected virtual bool MoveToPos(Vector3 pos)
-    {
-        var dir = pos - transform.position;
-        var reached = dir.magnitude < 0.1f;
-        if (!reached) transform.GetChild(0).localScale = new Vector3(-Mathf.Sign(dir.x), 1, 1);
-        transform.position += dir.normalized * moveSpeed.Value * Time.deltaTime;
-        if (reached) transform.position = pos;
-        return reached;
-    }
-    
     protected override void Attack_Enter()
     {
-        _anim.AnimationState.SetAnimation(0, attack, true);
+        lastTimeStartAttack = Time.time - attackAnimDuration / atkSpeed.Value; //càng cao càng nhanh
     }
+
     protected override void Attack_Update()
     {
-        if (team.fsm.State is not TeamMgr.State.Attack)
+        if (IsAttacking)
         {
-            fsm.ChangeState(State.Move);
+            ProcessAttack();
+            return;
         }
+        curTarget = FindTarget();
+        if (curTarget != null && curTarget.Hp > 0 &&
+            Vector3.Distance(transform.position, curTarget.transform.position) < atkRange.Value)
+            ProcessAttack();
+        else
+            fsm.ChangeState(State.Move);
     }
+
     protected override void Dead_Enter()
     {
         team.RemoveHero(this);
-        _anim.AnimationState.SetAnimation(0, die, false);
+        anim.AnimationState.SetAnimation(0, die, false);
         LeanPool.Despawn(this, 1f);
     }
+
+    protected void ProcessAttack()
+    {
+        if (Time.time - lastTimeStartAttack >= attackAnimDuration / atkSpeed.Value)
+        {
+            anim.timeScale = atkSpeed.Value;
+            anim.AnimationState.SetAnimation(0, attack, false);
+            anim.AnimationState.AddAnimation(0, idle, true, 0);
+            isAttacked = false;
+            lastTimeStartAttack = Time.time;
+        }
+
+        if (!isAttacked && Time.time - lastTimeStartAttack >= attackAnimEvent*attackAnimDuration / atkSpeed.Value)
+        {
+            Attack();
+            isAttacked = true;
+        }
+    }
+
+    protected virtual void Attack()
+    {
+        if (curTarget != null && curTarget.Hp > 0)
+            curTarget.DealDame(this);
+    }
+    
+    protected virtual bool MoveToPos(Vector3 pos,float rangeReach=0.1f) //only move x, reach at range
+    {
+        var dir = pos - transform.position;
+        var reached = dir.magnitude < rangeReach;
+        if (!reached) transform.GetChild(0).localScale = new Vector3(-Mathf.Sign(dir.x), 1, 1);
+        transform.position += dir.normalized * moveSpeed.Value * Time.deltaTime;
+        if (reached && rangeReach <= 0.11f) transform.position = pos;
+        return reached;
+    }
+    protected virtual Unit FindTarget()
+    {
+        if (team.EnemiesInRange.Count == 0) return null;
+        Unit unitNearest = null;
+        var minDistance = float.MaxValue;
+        for (var i = 0; i < team.EnemiesInRange.Count; i++)
+        {
+            if (team.EnemiesInRange[i] == null) continue;
+            var curDistance = Vector3.Distance(transform.position, team.EnemiesInRange[i].transform.position);
+            if (!(curDistance < minDistance)) continue;
+            unitNearest = team.EnemiesInRange[i];
+            minDistance = curDistance;
+        }
+        return unitNearest;
+    }
+
     public override void DealDame(Unit source)
     {
-        _anim.AnimationState.SetAnimation(1, hit, false);
+        anim.AnimationState.SetAnimation(1, hit, false);
+        anim.AnimationState.AddEmptyAnimation(1, 0.2f, 0);
         base.DealDame(source);
     }
 

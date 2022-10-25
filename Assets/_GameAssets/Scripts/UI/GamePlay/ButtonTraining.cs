@@ -20,6 +20,7 @@ public class ButtonTraining : MonoBehaviour
         _trainingProcess = trainingProcess;
         txtName?.SetText(_trainingProcess.heroConfig.Name);
         imgIcon.sprite = _trainingProcess.heroConfig.icon;
+        txtPriceGold.gameObject.SetActive(_trainingProcess.heroConfig.priceGoldTraining > 0);
         txtPriceGold.text = _trainingProcess.heroConfig.priceGoldTraining.ToString();
         txtPriceMana.gameObject.SetActive(_trainingProcess.heroConfig.priceManaTraining > 0);
         txtPriceMana.text = _trainingProcess.heroConfig.priceManaTraining.ToString();

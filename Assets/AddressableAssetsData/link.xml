@@ -1,14 +1,17 @@
 <linker>
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="Archer" preserve="all" />
+    <type fullname="Arrow" preserve="all" />
     <type fullname="BlockSceen" preserve="all" />
     <type fullname="DBM" preserve="all" />
+    <type fullname="Healer" preserve="all" />
     <type fullname="Miner" preserve="all" />
     <type fullname="PanelOpener" preserve="all" />
     <type fullname="Popup" preserve="all" />
     <type fullname="SafeArea" preserve="all" />
     <type fullname="SceneTransition" preserve="all" />
     <type fullname="Sword" preserve="all" />
+    <type fullname="Tanker" preserve="all" />
     <type fullname="Toast" preserve="all" />
     <type fullname="TopCanvas" preserve="all" />
     <type fullname="Config" preserve="nothing" serialized="true" />
@@ -62,6 +65,7 @@
     <type fullname="UnityEngine.Rendering.SortingGroup" preserve="all" />
     <type fullname="UnityEngine.Shader" preserve="all" />
     <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
     <type fullname="UnityEngine.TextAsset" preserve="all" />
     <type fullname="UnityEngine.Texture2D" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />

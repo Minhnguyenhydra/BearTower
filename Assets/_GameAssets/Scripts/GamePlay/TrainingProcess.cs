@@ -3,9 +3,10 @@ using System;
 using System.Collections;
 using System.Linq;
 using Lean.Pool;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+[Serializable]
 public class TrainingProcess
 {
     public TrainingProcess(TeamMgr team, HeroConfig heroConfig)
@@ -91,7 +92,7 @@ public class TrainingProcess
             QueueCount--;
         }
     }
-
+    [Button]
     public void SpawnHero()
     {
         var hero = LeanPool.Spawn(heroConfig.prefab, team.castle.transform.position+new Vector3(Random.Range(-1,1),Random.Range(-1,1),0), Quaternion.identity);

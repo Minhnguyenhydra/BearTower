@@ -24,5 +24,9 @@ namespace _GameAssets.Scripts
                 else transform.GetChild(idx).gameObject.SetActive(false);
             }
         }
+
+        public static bool InRange(this Component component, Vector2 range) =>
+            component.transform.position.x >= range.x && component.transform.position.x <= range.y;
+
     }
 }

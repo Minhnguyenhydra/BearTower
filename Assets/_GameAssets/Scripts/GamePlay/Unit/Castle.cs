@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Castle : Unit
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void Dead_Enter()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GamePlayMgr.Instance.EndGame();
     }
 }

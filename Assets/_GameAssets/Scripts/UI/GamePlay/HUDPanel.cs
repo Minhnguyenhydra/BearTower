@@ -25,7 +25,7 @@ public class HUDPanel : Panel,ITeamControl,IBackClickHandle
         Team.onListHeroChange += ListHeroChanged;
         Team.onGoldChange += GoldChanged;
         Team.onManaChange += ManaChanged;
-        FsmOnChanged(Team.fsm.State);
+        FsmOnChanged(Team.CurState);
         ListHeroChanged();
         GoldChanged();
         ManaChanged();
