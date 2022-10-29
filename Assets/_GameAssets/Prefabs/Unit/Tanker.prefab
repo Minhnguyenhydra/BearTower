@@ -394,6 +394,7 @@ MonoBehaviour:
   move: walk
   hit: hit
   die: die
+  heal: buff_damge
   attackAnimDuration: 1.333
   attackAnimEvent: 0.5
 --- !u!210 &-7624450740256220079

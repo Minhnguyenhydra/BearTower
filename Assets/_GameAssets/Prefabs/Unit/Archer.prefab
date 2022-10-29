@@ -85,6 +85,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1348433543817312625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6223137137410341258}
+  m_Layer: 0
+  m_Name: Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6223137137410341258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348433543817312625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3341236, y: 1.1861194, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8276852378365291134}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2121188794744741091
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,8 +427,12 @@ MonoBehaviour:
   die: die
   attackAnimDuration: 1.767
   attackAnimEvent: 0.694
+  arrowSpeed:
+    BaseValue: 30
   arrowPrefab: {fileID: 828837994320055550, guid: 644cfe1fc97843f47b88ff1a6f4233de,
     type: 3}
+  arrowSpawnPos: {fileID: 6223137137410341258}
+  target: target
 --- !u!210 &-7624450740256220079
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -438,6 +473,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7652984993063343055}
+  - {fileID: 6223137137410341258}
   m_Father: {fileID: 8276852377713990522}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

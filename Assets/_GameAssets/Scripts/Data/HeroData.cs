@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Kryz.CharacterStats;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -11,6 +12,11 @@ public partial class Config
     [SerializeField] private List<HeroConfig> listHero=new List<HeroConfig>();
     private Dictionary<string, HeroConfig> _heroConfigs;
     public Dictionary<string, HeroConfig> HeroConfigs => _heroConfigs ??= listHero.ToDictionary(config => config.Name, config => config);
+    [Button]
+    private void LoadCSV()
+    {
+        listHero[0].prefab.atk = new CharacterStat(100);
+    }
 }
 
 [Serializable]

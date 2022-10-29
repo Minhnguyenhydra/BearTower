@@ -4,6 +4,7 @@
     <type fullname="Arrow" preserve="all" />
     <type fullname="BlockSceen" preserve="all" />
     <type fullname="DBM" preserve="all" />
+    <type fullname="FlyText" preserve="all" />
     <type fullname="Healer" preserve="all" />
     <type fullname="Miner" preserve="all" />
     <type fullname="PanelOpener" preserve="all" />
