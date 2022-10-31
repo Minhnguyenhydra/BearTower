@@ -51,19 +51,14 @@ public class Miner : Hero
     {
         if (IsAttacking)
         {
-            ProcessAttack();
+            if (TriggerAttack()) Attack();
             return;
         }
         if (team.CurState != TeamMgr.State.Back)
-        {
-            ProcessAttack();
-        }
+            TriggerStartAttack();
         else
-        {
             fsm.ChangeState(State.Move);
-        }
     }
-
     protected override void Attack()
     {
         var goldAdd = Mathf.Min(atk.Value, capacity.Value - _goldHolding, _curGoldMine.Gold);

@@ -15,19 +15,19 @@ public class Hero : Unit
     protected bool IsStandAtIdlePosition => Vector3.Distance(transform.position, idlePosition) < 0.1f;
     public AttackType attackType = AttackType.Melee;
     public CharacterStat moveSpeed = new CharacterStat(5);
-    [SerializeField] private SkeletonAnimation anim;
+    [SerializeField] protected SkeletonAnimation anim;
     [SpineAnimation,SerializeField] private string idle;
     [SpineAnimation,SerializeField] private string attack;
     [SpineAnimation,SerializeField] private string move;
     [SpineAnimation,SerializeField] private string hit;
     [SpineAnimation,SerializeField] private string die;
-    protected Unit curTarget;
 
     [SerializeField] private float attackAnimDuration = 1.5f;
     [SerializeField,Range(0,1)] private float attackAnimEvent=0.6f;
+    protected Unit curTarget;
     protected float lastTimeStartAttack;
     protected bool isAttacked;
-    protected bool IsAttacking=>Time.time-lastTimeStartAttack<attackAnimDuration / atkSpeed.Value;
+    protected bool IsAttacking=>Time.time - lastTimeStartAttack < attackAnimDuration / atkSpeed.Value;
     protected override void Idle_Enter()
     {
         anim.timeScale = 1;
@@ -48,17 +48,18 @@ public class Hero : Unit
 
     protected override void Move_Update()
     {
-        curTarget = FindTarget();
-        if (curTarget != null && team.CurState is not TeamMgr.State.Back)
+        if (team.CurState is not TeamMgr.State.Back)
         {
-            if (MoveToPos(curTarget.transform.position, atkRange.Value - 0.5f))
-                fsm.ChangeState(State.Attack);
+            curTarget = FindTarget();
+            if (curTarget != null)
+            {
+                if (MoveToPos(curTarget.transform.position, atkRange.Value - 0.5f))
+                    fsm.ChangeState(State.Attack);
+                return;
+            }
         }
-        else
-        {
-            if (MoveToPos(idlePosition))
-                fsm.ChangeState(State.Idle);
-        }
+        if (MoveToPos(idlePosition))
+            fsm.ChangeState(State.Idle);
     }
 
     protected override void Attack_Enter()
@@ -70,15 +71,21 @@ public class Hero : Unit
     {
         if (IsAttacking)
         {
-            ProcessAttack();
+            if (TriggerAttack()) Attack();
             return;
         }
-        curTarget = FindTarget();
-        if (curTarget != null && curTarget.Hp > 0 &&
-            Vector3.Distance(transform.position, curTarget.transform.position) < atkRange.Value)
-            ProcessAttack();
-        else
-            fsm.ChangeState(State.Move);
+
+        if (team.CurState is not TeamMgr.State.Back)
+        {
+            curTarget = FindTarget();
+            if (curTarget != null && curTarget.Hp > 0 &&
+                Vector3.Distance(transform.position, curTarget.transform.position) < atkRange.Value)
+            {
+                TriggerStartAttack();
+                return;
+            }
+        }
+        fsm.ChangeState(State.Move);
     }
 
     protected override void Dead_Enter()
@@ -88,31 +95,28 @@ public class Hero : Unit
         LeanPool.Despawn(this, 1f);
     }
 
-    protected void ProcessAttack()
+    protected bool TriggerStartAttack()
     {
-        if (Time.time - lastTimeStartAttack >= attackAnimDuration / atkSpeed.Value)
-        {
-            anim.timeScale = atkSpeed.Value;
-            anim.AnimationState.SetAnimation(0, attack, false);
-            anim.AnimationState.AddAnimation(0, idle, true, 0);
-            isAttacked = false;
-            lastTimeStartAttack = Time.time;
-        }
-
-        if (!isAttacked && Time.time - lastTimeStartAttack >= attackAnimEvent*attackAnimDuration / atkSpeed.Value)
-        {
-            Attack();
-            isAttacked = true;
-        }
+        if (Time.time - lastTimeStartAttack < attackAnimDuration / atkSpeed.Value) return false;
+        anim.timeScale = atkSpeed.Value;
+        anim.AnimationState.SetAnimation(0, attack, false);
+        anim.AnimationState.AddAnimation(0, idle, true, 0);
+        isAttacked = false;
+        lastTimeStartAttack = Time.time;
+        return true;
     }
-
+    protected bool TriggerAttack()
+    {
+        if (isAttacked || Time.time - lastTimeStartAttack < attackAnimEvent * attackAnimDuration / atkSpeed.Value) return false;
+        isAttacked = true;
+        return true;
+    }
     protected virtual void Attack()
     {
         if (curTarget != null && curTarget.Hp > 0)
             curTarget.DealDame(this);
     }
-    
-    protected virtual bool MoveToPos(Vector3 pos,float rangeReach=0.1f) //only move x, reach at range
+    protected bool MoveToPos(Vector3 pos,float rangeReach=0.1f)
     {
         var dir = pos - transform.position;
         var reached = dir.magnitude < rangeReach;
@@ -135,6 +139,13 @@ public class Hero : Unit
             minDistance = curDistance;
         }
         return unitNearest;
+    }
+
+    public void Heal()
+    {
+        var value=maxHp.Value / 3;
+        Hp += value;
+        FlyText.Spawn(transform.position + Vector3.up, $"+{value:00} Hp", Color.green);
     }
 
     public override void DealDame(Unit source)

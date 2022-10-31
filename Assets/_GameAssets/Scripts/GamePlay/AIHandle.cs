@@ -18,7 +18,7 @@
                 yield return new WaitForSeconds(5);
                 Team.trainingProcesses[i%Team.trainingProcesses.Count].SpawnHero();
                 i++;
-                if (i % 3 == 0) Team.CurState = (TeamMgr.State) (i / 3 % 4);
+                if (i % 5 == 0) Team.CurState = (TeamMgr.State) (i / 5 % 4);
             }
             yield break;
         }

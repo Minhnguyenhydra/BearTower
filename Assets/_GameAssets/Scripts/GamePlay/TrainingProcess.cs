@@ -96,7 +96,7 @@ public class TrainingProcess
     public void SpawnHero()
     {
         var hero = LeanPool.Spawn(heroConfig.prefab, team.castle.transform.position+new Vector3(Random.Range(-1,1),Random.Range(-1,1),0), Quaternion.identity);
-        hero.Setup(team, 100);
+        hero.Setup(team);
         team.AddHero(hero);
     }
 }

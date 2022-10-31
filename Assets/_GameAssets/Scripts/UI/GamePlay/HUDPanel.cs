@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using System.Linq;
 using _GameAssets.Scripts;
 using DG.Tweening;
+using Kryz.CharacterStats;
 using Lean.Gui;
+using Lean.Transition;
 using TMPro;
 using UnityEngine;
 public class HUDPanel : Panel,ITeamControl,IBackClickHandle
@@ -67,6 +70,31 @@ public class HUDPanel : Panel,ITeamControl,IBackClickHandle
     public void OnClickChangeState(int state)
     {
         Team.fsm.ChangeState((TeamMgr.State) state);
+    }
+
+    public void OnClickSkill(int idxSkill)
+    {
+        switch (idxSkill)
+        {
+            case 0:
+                var modSpeedMine = new StatModifier(1f, StatModType.PercentAdd);
+                foreach (var miner in Team.listHero.Where(h => h is Miner))
+                {
+                    miner.atkSpeed.AddModifier(modSpeedMine);
+                }
+                this.EventTransition(() =>
+                {
+                    foreach (var miner in Team.listHero.Where(h => h is Miner))
+                        miner.atkSpeed.RemoveModifier(modSpeedMine);
+                }, 10);
+                break;
+            case 1:
+                foreach (var h in Team.listHero)
+                {
+                    h.Heal();
+                }
+                break;
+        }
     }
 
     protected override void OnDestroy()

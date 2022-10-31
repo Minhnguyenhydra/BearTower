@@ -98,6 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 15
+  speedAddMana: 1
+  curTeam: {fileID: 0}
+  spriteRenderer: {fileID: 1425189466}
 --- !u!1 &44634872404310430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,6 +2353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTeam: {fileID: 7440149101604418707}
+  color: {r: 0, g: 0, b: 1, a: 1}
   gold: 500
   mana: 0
   listHero: []
@@ -2973,6 +2977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTeam: {fileID: 6637385363610474399}
+  color: {r: 1, g: 0.07817807, b: 0, a: 1}
   gold: 500
   mana: 0
   listHero: []

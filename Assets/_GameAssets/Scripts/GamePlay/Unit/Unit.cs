@@ -77,42 +77,17 @@ public class Unit : MonoBehaviour
     public CharacterStat atkRange = new CharacterStat(1);
     public CharacterStat atkSpeed = new CharacterStat(5);
     public CharacterStat maxHp = new CharacterStat(100);
-    public static TMP_Text FlyTextPrefab;
-    public virtual void Setup(TeamMgr team, float maxHp)
+    public virtual void Setup(TeamMgr team)
     {
         this.team = team;
-        this.team.fsm.Changed+=TeamStateOnChanged;
-        this.maxHp = new CharacterStat(maxHp);
+        hpSlider.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = team.color;
         Hp = this.maxHp.Value;
         fsm.ChangeState(State.Idle);
-    }
-
-    protected virtual void OnDestroy()
-    {
-        this.team.fsm.Changed-=TeamStateOnChanged;
-    }
-
-    protected virtual void TeamStateOnChanged(TeamMgr.State curState)
-    {
     }
     public virtual void DealDame(Unit source)
     {
         Hp -= source.atk.Value;
-        if (FlyTextPrefab == null)
-            FlyTextPrefab = Addressables.LoadAssetAsync<GameObject>(nameof(FlyTextPrefab)).WaitForCompletion()
-                .GetComponent<TMP_Text>();
-        var flyText = LeanPool.Spawn(FlyTextPrefab, hpSlider.transform.position, Quaternion.identity);
-        flyText.text = source.atk.Value.ToString("00");
-        flyText.transform.DOMoveY(2, 1f).SetRelative(true).OnComplete(() =>
-        {
-            LeanPool.Despawn(flyText);
-        });
+        FlyText.Spawn(hpSlider.position, source.atk.Value.ToString("00"));
         if (hp <= 0) fsm.ChangeState(State.Dead);
-    }
-
-    [Button]
-    private void TestDame()
-    {
-        DealDame(this);
     }
 }

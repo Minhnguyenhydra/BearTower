@@ -10,6 +10,7 @@ using UnityEngine;
 public class TeamMgr : MonoBehaviour
 {
     public TeamMgr enemyTeam;
+    public Color color = Color.blue;
     public enum State
     {
         Back,
@@ -116,7 +117,6 @@ public class TeamMgr : MonoBehaviour
         TeamControl.Setup();
         InitRangeFindEnemy();
         fsm.ChangeState(State.Defense);
-        AutoIncMana();
     }
 
     private void InitRangeFindEnemy()
@@ -134,12 +134,6 @@ public class TeamMgr : MonoBehaviour
             RangeFindEnemy.Add(state, new Vector2(Mathf.Min(p1, p2), Mathf.Max(p1, p2)));
             Debug.Log(state+":"+ RangeFindEnemy[state]);
         }
-    }
-    
-    private void AutoIncMana()
-    {
-        DOTween.Sequence().AppendInterval(1).AppendCallback(() => Mana += 10).SetLoops(-1);
-
     }
 
     private void SpawnInitMiner(int count)

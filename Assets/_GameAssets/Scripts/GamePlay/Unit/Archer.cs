@@ -1,29 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Kryz.CharacterStats;
 using Lean.Pool;
+using Spine;
+using Spine.Unity;
 using UnityEngine;
 
 public class Archer : Hero
 {
+    public CharacterStat arrowSpeed = new CharacterStat(30);
     [SerializeField] private Arrow arrowPrefab;
+    [SerializeField] private Transform arrowSpawnPos;
+    [SpineBone,SerializeField] private string target;
+    private Bone _boneTarget;
+    private Bone BoneTarget => _boneTarget ??= anim.skeleton.FindBone(target);
+
     protected override void Attack()
     {
         if (curTarget != null && curTarget.Hp > 0)
         {
-            var arrow = LeanPool.Spawn(arrowPrefab, transform.position - Vector3.right * transform.GetChild(0).localScale.x, Quaternion.identity);
             var cachePos = curTarget.transform.position;
-            arrow.transform.DOMove(cachePos, 0.5f);
-            arrow.transform.GetChild(0).right = cachePos+Vector3.up - arrow.transform.GetChild(0).transform.position;
-            arrow.transform.GetChild(0).DOLocalMoveY(3f, 0.25f).From(1.5f).SetLoops(2,LoopType.Yoyo).OnComplete(() =>
-            {
-                if (curTarget != null && curTarget.Hp > 0)
+            var arrow = LeanPool.Spawn(arrowPrefab, new Vector3(arrowSpawnPos.position.x,transform.position.y,0), Quaternion.identity);
+            arrow.transform.GetChild(0).position = arrowSpawnPos.position;
+            var dis = Vector3.Distance(cachePos, transform.position);
+            var duration = dis / arrowSpeed.Value;
+            arrow.transform.DOMove(cachePos, duration).SetEase(Ease.Linear);
+            var lasPos = arrow.transform.GetChild(0).position;
+            arrow.transform.GetChild(0).DOLocalMoveY(dis / 5f, duration / 2).SetRelative(true).SetLoops(2, LoopType.Yoyo)
+                .OnUpdate(() =>
                 {
-                    curTarget.DealDame(this);
-                }
-                LeanPool.Despawn(arrow);
-            });
+                    arrow.transform.GetChild(0).right = arrow.transform.GetChild(0).position - lasPos;
+                    lasPos = arrow.transform.GetChild(0).position;
+                }).OnComplete(() =>
+                {
+                    if (curTarget != null && curTarget.Hp > 0)
+                        curTarget.DealDame(this);
+                    LeanPool.Despawn(arrow);
+                });
         }
-            
     }
 }
