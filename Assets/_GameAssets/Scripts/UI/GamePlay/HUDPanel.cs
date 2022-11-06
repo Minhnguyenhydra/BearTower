@@ -7,7 +7,7 @@ using Lean.Gui;
 using Lean.Transition;
 using TMPro;
 using UnityEngine;
-public class HUDPanel : Panel,ITeamControl,IBackClickHandle
+public class HUDPanel : Panel,ITeamControl
 {
     public Transform trainingBtnContainer;
     [SerializeField] private TMP_Text txtGold;
@@ -110,7 +110,7 @@ public class HUDPanel : Panel,ITeamControl,IBackClickHandle
             data.onNotEnoughMana -= NotEnoughMana;
         }
     }
-    public void BackClick()
+    public override void BackClick()
     {
         Time.timeScale = 0;
         Popup.Show("Pause","Continue?","Continue", () =>

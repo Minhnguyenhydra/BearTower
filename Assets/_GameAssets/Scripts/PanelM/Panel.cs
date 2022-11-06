@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BrunoMikoski.AnimationSequencer;
+using Lean.Transition;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -47,15 +48,16 @@ public class Panel : MonoBehaviour
             {
                 BlockSceen.Hide();
                 var p = op.Result.GetComponent<Panel>();
-                p._key = panelKey;
+                p.Key = p.name = panelKey;
                 p.OnDestroyEvent += () => Addressables.Release(op);
+                p.Anim.SetProgress(1);
                 GetPanelSuccess(p, onCompleted, container);
             };
         }
     }
     private static bool TryGetPooledPanel(string panelKey,out Panel panel)
     {
-        panel = PoolPanels.FirstOrDefault(p => p._key == panelKey);
+        panel = PoolPanels.FirstOrDefault(p => p.Key == panelKey);
         return panel != null;
     }
     
@@ -63,14 +65,27 @@ public class Panel : MonoBehaviour
     {
         panel.transform.SetParent(container);
         panel.transform.SetAsLastSibling();
-        panel.Anim.SetProgress(1);
         panel.TurnOn();
         onCompleted?.Invoke(panel);
     }
     #endregion
-    
+
     private string _key;
+
+    public string Key
+    {
+        get
+        {
+            if (string.IsNullOrEmpty(_key)) _key = name;
+            return _key;
+        }
+        private set => _key = value;
+    }
+
+    [SerializeField] private bool destroyOnTurnOff;
+    [SerializeField] private bool hideBackPanel;
     private event Action OnDestroyEvent;
+
     private AnimationSequencerController _anim;
     private AnimationSequencerController Anim
     {
@@ -81,16 +96,53 @@ public class Panel : MonoBehaviour
             return _anim;
         }
     }
+    
     public virtual void TurnOn()
     {
         gameObject.SetActive(true);
-        Anim.PlayBackwards(false);
+        if (Anim != null)
+            Anim.PlayBackwards(false, TurnOnDone);
+        else TurnOnDone();
     }
+
+    protected virtual void TurnOnDone()
+    {
+        if (hideBackPanel) SetActiveBackPanel(false);
+    }
+
+    private void SetActiveBackPanel(bool isShow)
+    {
+        for (var i = transform.parent.childCount - 2; i >= 0; i--)
+        {
+            var p = transform.parent.GetChild(i).GetComponent<Panel>();
+            if (p != null && !PoolPanels.Contains(p))
+            {
+                p.gameObject.SetActive(isShow);
+                if (p.hideBackPanel) break;
+            }
+        }
+    }
+
     public virtual void TurnOff()
     {
         if (!PoolPanels.Contains(this)) PoolPanels.Add(this);
-        Anim.PlayForward(false, () => gameObject.SetActive(false));
+        if (hideBackPanel) SetActiveBackPanel(true);
+        if (Anim != null) Anim.PlayForward(false, TurnOffDone);
+        else TurnOffDone();
+
     }
+
+    protected virtual void TurnOffDone()
+    {
+        if (destroyOnTurnOff) Destroy(gameObject);
+        else gameObject.SetActive(false);
+    }
+
+    public virtual void BackClick()
+    {
+        TurnOff();
+    }
+    
     protected virtual void OnDestroy()
     {
         if (PoolPanels.Contains(this)) PoolPanels.Remove(this);

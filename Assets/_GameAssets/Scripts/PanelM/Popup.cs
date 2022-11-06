@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Popup : Panel,IBackClickHandle
+public class Popup : Panel
 {
     [SerializeField] private TMP_Text txtHeader;
     [SerializeField] private TMP_Text txtMessage;
@@ -42,7 +42,7 @@ public class Popup : Panel,IBackClickHandle
         btn.onClick.AddListener(TurnOff);
     }
 
-    public void BackClick()
+    public override void BackClick()
     {
         if (!_forceChoose) TurnOff();
     }

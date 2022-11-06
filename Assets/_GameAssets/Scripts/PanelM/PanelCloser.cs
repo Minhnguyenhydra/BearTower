@@ -11,8 +11,8 @@ public class PanelCloser : MonoBehaviour
         for (var i = transform.childCount-1; i >=0; i--)
         {
             var panel = transform.GetChild(i).GetComponent<Panel>();
-            if (panel == null || !panel.gameObject.activeSelf || Panel.PoolPanels.Contains(panel)) continue;
-            if (panel is IBackClickHandle backClickHandle) backClickHandle.BackClick(); else panel.TurnOff();
+            if (panel == null || Panel.PoolPanels.Contains(panel)) continue;
+            panel.BackClick();
             break;
         }
     }
