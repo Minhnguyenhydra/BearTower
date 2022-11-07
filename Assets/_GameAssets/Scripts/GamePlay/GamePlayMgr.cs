@@ -17,7 +17,6 @@ public class GamePlayMgr : MonoBehaviour
 
     private void Start()
     {
-    
         foreach (var team in teams)
             team.Setup();
     }

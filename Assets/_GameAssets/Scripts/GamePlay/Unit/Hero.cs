@@ -28,6 +28,25 @@ public class Hero : Unit
     protected float lastTimeStartAttack;
     protected bool isAttacked;
     protected bool IsAttacking=>Time.time - lastTimeStartAttack < attackAnimDuration / atkSpeed.Value;
+    private UpgradeHeroItem upgradeInfo;
+    
+    public virtual void Setup(TeamMgr team,UpgradeHeroItem upgradeInfo)
+    {
+        this.team = team;
+        this.upgradeInfo = upgradeInfo;
+        hpSlider.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = team.color;
+        Hp = this.maxHp.Value;
+        fsm.ChangeState(State.Idle);
+        SetSkin();
+    }
+
+    private void SetSkin()
+    {
+        anim.Skeleton.SetSkin((team.TeamControl is AIHandle ? "Enemy_" : "") + "Lv" + upgradeInfo.level); // 1. Set your skin.
+        anim.Skeleton.SetSlotsToSetupPose(); // 2. Make sure it refreshes.
+        anim.AnimationState.Apply(anim.Skeleton); // 3. Make sure the attachments from your currently playing animation are applied.
+    }
+
     protected override void Idle_Enter()
     {
         anim.timeScale = 1;

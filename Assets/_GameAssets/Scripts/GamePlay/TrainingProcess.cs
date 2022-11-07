@@ -9,12 +9,14 @@ using Random = UnityEngine.Random;
 [Serializable]
 public class TrainingProcess
 {
-    public TrainingProcess(TeamMgr team, HeroConfig heroConfig)
+    public TrainingProcess(TeamMgr team, UpgradeHeroItem upgradeInfo)
     {
         this.team = team;
-        this.heroConfig = heroConfig;
+        this.upgradeInfo = upgradeInfo;
+        this.heroConfig = DBM.Config.HeroConfigs[upgradeInfo.heroId];
     }
     public TeamMgr team;
+    public UpgradeHeroItem upgradeInfo;
     public HeroConfig heroConfig;
     private int _queueCount;
     public Action onQueueCountChanged;
@@ -96,7 +98,7 @@ public class TrainingProcess
     public void SpawnHero()
     {
         var hero = LeanPool.Spawn(heroConfig.prefab, team.castle.transform.position+new Vector3(Random.Range(-1,1),Random.Range(-1,1),0), Quaternion.identity);
-        hero.Setup(team);
+        hero.Setup(team, upgradeInfo);
         team.AddHero(hero);
     }
 }

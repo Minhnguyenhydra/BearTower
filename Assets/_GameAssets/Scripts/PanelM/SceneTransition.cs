@@ -21,7 +21,7 @@ public class SceneTransition : MonoBehaviour
     private void SetPercentLoaded(float percent)
     {
         slider.value = percent;
-        txtPercent.text = $"{slider.value * 100f:F0}%";
+        txtPercent.text = $"Now Loading ({slider.value * 100f:F0}%) ...";
     }
     
     private IEnumerator ChangeSceneCor(string sceneName)

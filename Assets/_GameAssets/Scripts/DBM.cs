@@ -1,5 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -12,6 +17,15 @@ public partial class Config
 public partial class UserData
 {
     
+}
+public class ListReplacementUserContractResolver : DefaultContractResolver
+{
+    protected override List<MemberInfo> GetSerializableMembers(Type objectType)
+    {
+        var fields = objectType.GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).ToList<MemberInfo>(); 
+        var memberInfos = fields.Where(fi => Attribute.IsDefined(fi, typeof(JsonPropertyAttribute))).ToList();
+        return memberInfos;
+    }
 }
 [CreateAssetMenu(fileName = "DBM",menuName = "SO/DBM")]
 public class DBM : ScriptableObject
@@ -27,20 +41,42 @@ public class DBM : ScriptableObject
     }
     [SerializeField] private Config config;
     public static Config Config => Instance.config;
-    [SerializeField] private UserData initUserData;
-    private UserData _userData;
-    public static UserData UserData
+    // [SerializeField] private UserData initUserData;
+    [SerializeField] private UserData _userData;
+      public static UserData UserData
+      {
+          get
+          {
+              // if (Instance._userData == null)
+              // {
+              //     if (PlayerPrefs.GetString(nameof(UserData), "") == "")
+              //     {
+              //         var str = JsonConvert.SerializeObject(Instance.initUserData, new JsonSerializerSettings()
+              //         {
+              //             ContractResolver = new ListReplacementUserContractResolver()
+              //         });
+              //         Debug.Log(str);
+              //         PlayerPrefs.SetString(nameof(UserData), str);
+              //     }
+              //     Instance._userData = JsonConvert.DeserializeObject<UserData>(
+              //         PlayerPrefs.GetString(nameof(UserData), ""),
+              //         new JsonSerializerSettings()
+              //         {
+              //             ContractResolver = new ListReplacementUserContractResolver()
+              //         });
+              // }
+
+              return Instance._userData;
+          }
+      }
+      public static void Save()
     {
-        get
+        var str = JsonConvert.SerializeObject(Instance._userData, new JsonSerializerSettings()
         {
-            if (Instance._userData == null)
-            {
-                if (PlayerPrefs.GetString(nameof(UserData), "") == "")
-                    PlayerPrefs.SetString(nameof(UserData), JsonConvert.SerializeObject(Instance.initUserData));
-                Instance._userData =JsonConvert.DeserializeObject<UserData>(PlayerPrefs.GetString(nameof(UserData), ""));
-            }
-            return Instance._userData;
-        }
+            ContractResolver = new ListReplacementUserContractResolver()
+        });
+        Debug.Log(str);
+        PlayerPrefs.SetString(nameof(UserData), str);
     }
 }
 

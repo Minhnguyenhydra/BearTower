@@ -15,6 +15,13 @@ public class HUDPanel : Panel,ITeamControl
     [SerializeField] private TMP_Text txtPopulation;
     [SerializeField] private List<LeanToggle> toggleStates;
     public TeamMgr Team { get; set; }
+
+    public void Init(TeamMgr team)
+    {
+        this.Team = team;
+        Team.dataUpgradeHero = DBM.UserData.upgrade.DictHero.Values.ToList();
+    }
+
     public void Setup()
     {
         trainingBtnContainer.FillData<TrainingProcess, ButtonTraining>(Team.trainingProcesses, (data, btn, idx) =>
@@ -108,6 +115,7 @@ public class HUDPanel : Panel,ITeamControl
         {
             data.onNotEnoughGold -= NotEnoughGold;
             data.onNotEnoughMana -= NotEnoughMana;
+            data.onMaxPopulation -= MaxPopulation;
         }
     }
     public override void BackClick()
@@ -116,7 +124,11 @@ public class HUDPanel : Panel,ITeamControl
         Popup.Show("Pause","Continue?","Continue", () =>
         {
             Time.timeScale = 1;
-        },forceChoose:true);
+        },"Main Menu",()=>
+        {
+            Time.timeScale = 1;
+            SceneTransition.ChangeScene("MainMenu");
+        },true);
     }
 
 }

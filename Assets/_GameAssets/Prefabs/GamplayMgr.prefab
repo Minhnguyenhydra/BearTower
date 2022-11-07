@@ -98,8 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 15
+  manaAdd: 10
   speedAddMana: 1
+  lastTimeAddMana: -3.4028235e+38
   curTeam: {fileID: 0}
+  UnitsInRange: []
   spriteRenderer: {fileID: 1425189466}
 --- !u!1 &44634872404310430
 GameObject:
@@ -2367,6 +2370,7 @@ MonoBehaviour:
   - {fileID: 6652678220403562017}
   fence: {fileID: 1267666036568415832}
   trainingProcesses: []
+  dataUpgradeHero: []
   hudPanel: {fileID: 0}
 --- !u!1 &6637385363699489589
 GameObject:
@@ -2991,6 +2995,17 @@ MonoBehaviour:
   - {fileID: 8129093005801102239}
   fence: {fileID: 155034710675382528}
   trainingProcesses: []
+  dataUpgradeHero:
+  - heroId: Miner
+    level: 1
+  - heroId: Sword
+    level: 1
+  - heroId: Archer
+    level: 1
+  - heroId: Tanker
+    level: 1
+  - heroId: Healer
+    level: 1
   hudPanel: {fileID: 0}
 --- !u!114 &1884156416
 MonoBehaviour:

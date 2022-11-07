@@ -11,6 +11,7 @@ public class Popup : Panel
     [SerializeField] private TMP_Text txtMessage;
     [SerializeField] private Button btnConfirm;
     [SerializeField] private Button btnCancel;
+    [SerializeField] private Button btnClose;
     private bool _forceChoose = true;
     public static void Show(string message)
     {
@@ -38,7 +39,7 @@ public class Popup : Panel
         if (!btn.gameObject.activeSelf) return;
         btn.GetComponentInChildren<TMP_Text>().text = text;
         btn.onClick.RemoveAllListeners();
-        if (callback != null) btnConfirm.onClick.AddListener(callback);
+        if (callback != null) btn.onClick.AddListener(callback);
         btn.onClick.AddListener(TurnOff);
     }
 

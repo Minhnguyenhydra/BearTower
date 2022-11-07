@@ -41,6 +41,26 @@ MonoBehaviour:
     m_Address: FlyText
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: d7ea56cc2e6594e8ba133693030b322e
+    m_Address: Game
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6b55a6d1fb0e34ebb8678f96540f0bc5
+    m_Address: MainMenu
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4c9e4a4989cf24beeb5052d9e9cf31a3
+    m_Address: SelectModePanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7e5e961b312454c65b33ea6a64fdb013
+    m_Address: ShopPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8b8fb429460b14bc8ae0698940aa0973
+    m_Address: UpgradePanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f00747e82daa65c48bcdc00d8d5fc605, type: 2}
   m_SchemaSet:

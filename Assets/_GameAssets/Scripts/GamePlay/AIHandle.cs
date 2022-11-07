@@ -5,6 +5,11 @@
     public class AIHandle:MonoBehaviour,ITeamControl
     {
         public TeamMgr Team { get; set; }
+        public void Init(TeamMgr team)
+        {
+            this.Team = team;
+        }
+
         public void Setup()
         {
             StartCoroutine(SpawnCor());

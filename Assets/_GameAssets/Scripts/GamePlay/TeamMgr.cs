@@ -60,10 +60,12 @@ public class TeamMgr : MonoBehaviour
     public Fence fence;
     
     public List<TrainingProcess> trainingProcesses = new List<TrainingProcess>();
+    
+    public List<UpgradeHeroItem> dataUpgradeHero=new List<UpgradeHeroItem>();
+    
     [SerializeField] private HUDPanel hudPanel; //là tự điều khiển
     private ITeamControl _teamControl;
-
-    private ITeamControl TeamControl
+    public ITeamControl TeamControl
     {
         get
         {
@@ -75,6 +77,7 @@ public class TeamMgr : MonoBehaviour
     public readonly Dictionary<State, Vector2> RangeFindEnemy = new Dictionary<State, Vector2>();
     public readonly List<Unit> EnemiesInRange = new List<Unit>();
     public float FaceDirection => castle.transform.GetChild(0).localScale.x;
+
     private void Awake()
     {
         fsm = new StateMachine<State>(this);
@@ -110,11 +113,11 @@ public class TeamMgr : MonoBehaviour
 
     public void Setup()
     {
-        foreach (var heroConfig in DBM.Config.HeroConfigs.Values)
-            trainingProcesses.Add(new TrainingProcess(this, heroConfig));
-        SpawnInitMiner(2);
-        TeamControl.Team = this;
+        TeamControl.Init(this);
+        foreach (var upgradeInfo in dataUpgradeHero.Where(upgradeInfo => upgradeInfo.level>0))
+            trainingProcesses.Add(new TrainingProcess(this, upgradeInfo));
         TeamControl.Setup();
+        SpawnInitMiner(2);
         InitRangeFindEnemy();
         fsm.ChangeState(State.Defense);
     }
@@ -138,8 +141,9 @@ public class TeamMgr : MonoBehaviour
 
     private void SpawnInitMiner(int count)
     {
+        var minerProcess = trainingProcesses.Find(t => t.upgradeInfo.heroId == "Miner");
         for (var i = 0; i < count; i++)
-            trainingProcesses[0].SpawnHero();
+            minerProcess.SpawnHero();
     }
 
     public void AddHero(Hero hero)

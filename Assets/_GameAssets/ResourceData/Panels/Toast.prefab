@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Message
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a994441417b92554281a2743c63c82c7, type: 2}
-  m_sharedMaterial: {fileID: 8833219987234110531, guid: a994441417b92554281a2743c63c82c7,
+  m_fontAsset: {fileID: 11400000, guid: 5d900a31b13f34fcaadaef2dd1f7dee4, type: 2}
+  m_sharedMaterial: {fileID: -2768616403319106814, guid: 5d900a31b13f34fcaadaef2dd1f7dee4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 8486766963868088396}
   - component: {fileID: 2817896243395713923}
   - component: {fileID: 4810217915460416043}
-  - component: {fileID: -1376058750694407179}
+  - component: {fileID: 822267160599138810}
   m_Layer: 5
   m_Name: Toast
   m_TagString: Untagged
@@ -354,7 +354,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &-1376058750694407179
+--- !u!114 &822267160599138810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,7 +363,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8486766963868088397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ffcaf920f07ab4586fc8a3b8d809b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 21eb02857c3f440609db477a1b5f7c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyOnTurnOff: 0
+  hideBackPanel: 0
   txtMessage: {fileID: 1341692286015728381}

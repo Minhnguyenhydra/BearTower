@@ -57,7 +57,7 @@ public class Unit : MonoBehaviour
     #endregion
     
     public TeamMgr team;
-    [SerializeField] private Transform hpSlider;
+    [SerializeField] protected Transform hpSlider;
     [SerializeField,HideInInspector] private float hp;
     [ShowInInspector]
     public float Hp
@@ -77,13 +77,6 @@ public class Unit : MonoBehaviour
     public CharacterStat atkRange = new CharacterStat(1);
     public CharacterStat atkSpeed = new CharacterStat(5);
     public CharacterStat maxHp = new CharacterStat(100);
-    public virtual void Setup(TeamMgr team)
-    {
-        this.team = team;
-        hpSlider.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = team.color;
-        Hp = this.maxHp.Value;
-        fsm.ChangeState(State.Idle);
-    }
     public virtual void DealDame(Unit source)
     {
         Hp -= source.atk.Value;

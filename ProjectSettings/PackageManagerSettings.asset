@@ -33,6 +33,7 @@ MonoBehaviour:
     - com.littlebigfun.addressable-importer
     - com.oddworm.addressablesbuildlayoutexplorer
     - com.openupm
+    - com.coffee.ui-effect
     m_IsDefault: 0
     m_Capabilities: 0
   m_UserSelectedRegistryName: package.openupm.com
