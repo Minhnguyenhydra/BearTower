@@ -13,10 +13,6 @@ using UnityEngine.UI;
 public class Unit : MonoBehaviour
 {
     #region fsm
-    public class Driver
-    {
-        public StateEvent Update;
-    }
     public enum State
     {
         Idle,
@@ -24,10 +20,10 @@ public class Unit : MonoBehaviour
         Attack,
         Dead,
     }
-    public StateMachine<State, Driver> fsm;
+    public StateMachine<State> fsm;
     protected virtual void Awake()
     {
-        fsm = new StateMachine<State, Driver>(this);
+        fsm = new StateMachine<State>(this);
     }
     protected virtual void Update()
     {
