@@ -7,6 +7,8 @@ using UnityEngine;
 public class GoldMine : MonoBehaviour
 {
     [SerializeField] private float maxGold = 1000;
+    [SerializeField] private Sprite[] mineSprites;
+    [SerializeField] private SpriteRenderer mineVisual;
     private float gold;
     [ShowInInspector]
     public float Gold
@@ -15,11 +17,13 @@ public class GoldMine : MonoBehaviour
         set
         {
             gold = value;
-            transform.localScale = Vector3.one * gold / maxGold;
+            var range=maxGold / mineSprites.Length;
+            var visualIdx = Mathf.Clamp((int)(gold / range), 0, mineSprites.Length - 1);
+            mineVisual.sprite = mineSprites[visualIdx];
+            //transform.localScale = Vector3.one * gold / maxGold;
         }
     }
     public List<Miner> slots = new List<Miner>();
-
     private void Awake()
     {
         gold = maxGold;

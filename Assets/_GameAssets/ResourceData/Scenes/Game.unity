@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClampX: 1
   MinX: 0
-  MaxX: 153.6
+  MaxX: 153.5
   ClampY: 1
   MinY: -10.8
   MaxY: 10.8
@@ -1184,11 +1184,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6767679649312457268, guid: 7cad39e34300c46e38ec4e93c29c6138,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9269262
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cad39e34300c46e38ec4e93c29c6138, type: 3}
