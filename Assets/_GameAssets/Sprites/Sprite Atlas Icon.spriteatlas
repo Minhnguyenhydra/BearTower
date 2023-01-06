@@ -57,10 +57,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 22c1e090a921e904c8520a8fa2efd2df, type: 3}
   - {fileID: 21300000, guid: b16079a036e65b24a87f1c1d32d3c7df, type: 3}
   - {fileID: 21300000, guid: 285a9da0441ed44fc9dcac0c9d5359cf, type: 3}
+  - {fileID: 21300000, guid: 98f672b03af954236aacb0b0fc7206bd, type: 3}
   - {fileID: 21300000, guid: a100afc0b83f54274ab404420a8b4327, type: 3}
   - {fileID: 21300000, guid: 8ade5ad0dcd199e4098cec4e3f3bba26, type: 3}
   - {fileID: 21300000, guid: d38d28115fcfb46ba9b09f02dd0db191, type: 3}
   - {fileID: 21300000, guid: e0f7cf215d4714e4b87c4d63418e175b, type: 3}
+  - {fileID: 21300000, guid: b9f6d4310d6674fef9ea9f6635b62231, type: 3}
+  - {fileID: 21300000, guid: 1db7c07142b7241de9a89dcbda60bb74, type: 3}
   - {fileID: 21300000, guid: 828ad8b1fea849e4cb960ad72d389899, type: 3}
   - {fileID: 21300000, guid: 014ec5c1627afac42b78d0ecc083022b, type: 3}
   - {fileID: 21300000, guid: bd2dac028e50777499509938d96b13e5, type: 3}
@@ -68,6 +71,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 87844b92c8ff544aaba7f1954e35e2c0, type: 3}
   - {fileID: 21300000, guid: 3dc7eca2351d644fb8f570e0674ed694, type: 3}
   - {fileID: 21300000, guid: 85fcc6d2ae6fd4d6fb0704c9ffd77ddd, type: 3}
+  - {fileID: 21300000, guid: bebad713a70f346c3b92c9515da4aac1, type: 3}
   - {fileID: 21300000, guid: a8709aa365ae8d34d92efae68f5fb21b, type: 3}
   - {fileID: 21300000, guid: 36edbab33085d47cd8fbb24495cf63d3, type: 3}
   - {fileID: 21300000, guid: 9fbd76c38d089754bb5832d337ce62dd, type: 3}
@@ -76,10 +80,15 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 17f31394a484948adbdedda8e778e3de, type: 3}
   - {fileID: 21300000, guid: b24a5dd4ca3f6164aadad41d99a09fa9, type: 3}
   - {fileID: 21300000, guid: a1aecf158e7060f408b2fb677e044678, type: 3}
+  - {fileID: 21300000, guid: b7de9035e09584b4b932defed6f53453, type: 3}
+  - {fileID: 21300000, guid: 7dd952b51a039443492d5cbe2c781ab1, type: 3}
   - {fileID: 21300000, guid: 14481386072824e7d9cdd951e9c215f3, type: 3}
+  - {fileID: 21300000, guid: b573e2a69ac174c92a2335c6fcba7d17, type: 3}
   - {fileID: 21300000, guid: 3f38e3e6f9c394797b44ff99dbda36ce, type: 3}
+  - {fileID: 21300000, guid: dc1e7447fd61d48918b1fb25f86acf1c, type: 3}
   - {fileID: 21300000, guid: a658e877f97f7419ab0194b25ac9e8f7, type: 3}
   - {fileID: 21300000, guid: c60902c7e794cd2439cb77bbc3aa6680, type: 3}
+  - {fileID: 21300000, guid: d9e99228998214cd5950cbf107b0a943, type: 3}
   - {fileID: 21300000, guid: cef7024830550451e8b39545822fc7a3, type: 3}
   - {fileID: 21300000, guid: 55a14b68133914747a980e60503204d9, type: 3}
   - {fileID: 21300000, guid: 2354c1788b9c69e44819476281f826bf, type: 3}
@@ -88,6 +97,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1c89de69588f20f43ad133f65a9548d2, type: 3}
   - {fileID: 21300000, guid: c3be322a66e698b4a9b34554749094a1, type: 3}
   - {fileID: 21300000, guid: f2d1824a6a11346568976b09374f288f, type: 3}
+  - {fileID: 21300000, guid: 0fafa8aa03e2649ecbfdb2e1f822d720, type: 3}
   - {fileID: 21300000, guid: 012cdaaaedcc0cf47abf054065685ebe, type: 3}
   - {fileID: 21300000, guid: 2de4b1bac37e545f79494aaa11e4ab7b, type: 3}
   - {fileID: 21300000, guid: a3b729cacfd364c418b90dbd1334b8ab, type: 3}
@@ -100,7 +110,11 @@ SpriteAtlas:
   - {fileID: 21300000, guid: fa3ddd2cb273f48d58e613919db9a2de, type: 3}
   - {fileID: 21300000, guid: 9653dc9cb4b454e1a8fc37773498f8ac, type: 3}
   - {fileID: 21300000, guid: 566d7d0d5a7ba4f2a9069c6b4a0c1212, type: 3}
+  - {fileID: 21300000, guid: 78c8ed4de18694ff6bb857112eed98b4, type: 3}
+  - {fileID: 21300000, guid: 9203125d8aa1d45789c99fe350266ba9, type: 3}
   - {fileID: 21300000, guid: 25d9ff7daa6d74311ab4d5b005cbfd63, type: 3}
+  - {fileID: 21300000, guid: 4ee7e8cdc104c46a880af61d5b6be127, type: 3}
+  - {fileID: 21300000, guid: 6a51d4ddc220249cea641929d60965f8, type: 3}
   - {fileID: 21300000, guid: 79fb750e0421b214baad46236c1e2f46, type: 3}
   - {fileID: 21300000, guid: c9206d1ef9ec441a6a6b340fae1de4bf, type: 3}
   - {fileID: 21300000, guid: cb94362ed832645a697a7ea147464674, type: 3}
@@ -122,10 +136,13 @@ SpriteAtlas:
   - ChestOpened
   - EditIcon
   - btnUpgrade
+  - Miner
   - sword
   - Slider
   - FRAMECurrency
   - FrameUpgrade
+  - skill 5
+  - witch
   - icon_inventory
   - chestOpening
   - Slider
@@ -133,6 +150,7 @@ SpriteAtlas:
   - Title
   - Title
   - pickaxe
+  - skill 3
   - X
   - banner
   - ProfileBackground
@@ -141,10 +159,15 @@ SpriteAtlas:
   - setting
   - IconCopy
   - iconEye
+  - Archer
+  - skill 4
   - diamond
+  - skill 2
   - army
+  - Swordman
   - castle
   - Profile
+  - skill 6_
   - coin
   - bg_menu_bar
   - ChestLock
@@ -153,6 +176,7 @@ SpriteAtlas:
   - Selected
   - Layer 33
   - bow
+  - Skill 1
   - ChestEmpty
   - ArrowBack
   - staff
@@ -165,7 +189,11 @@ SpriteAtlas:
   - Title
   - shield
   - Gradient
+  - Assasin
+  - skill 7
   - skill
+  - Tanker
+  - horse
   - icon_market
   - BGSlider
   - frame

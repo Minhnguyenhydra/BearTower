@@ -31,11 +31,15 @@ public class UpgradeUserData
     {
         if (!DictHero.ContainsKey(heroId)) return "Can't find "+heroId;
             if(DictHero[heroId].level >= DBM.Config.upgrade.priceList.Count) return "Max Level";
-            if (DBM.Config.upgrade.priceList[DictHero[heroId].level] > DBM.UserData.Resources[ResourcesType.Gold].Value)
-                return "Not enough gold, need " + DBM.Config.upgrade.priceList[DictHero[heroId].level] +
-                       " to upgrade to level " + (DictHero[heroId].level + 1);
-            DBM.UserData.Resources[ResourcesType.Gold].Value -= DBM.Config.upgrade.priceList[DictHero[heroId].level];
-            DictHero[heroId].level++;
+            if (DBM.Config.upgrade.priceList[DictHero[heroId].level-1] > DBM.UserData.Resources[ResourcesType.Gold].Value)
+                return "Not enough gold, need " + DBM.Config.upgrade.priceList[DictHero[heroId].level-1] + " to upgrade next level";
+            DBM.UserData.Resources[ResourcesType.Gold].Value -= DBM.Config.upgrade.priceList[DictHero[heroId].level-1];
+            DictHero[heroId].subLevel++;
+            if (DictHero[heroId].subLevel == 5)
+            {
+                DictHero[heroId].level++;
+                DictHero[heroId].subLevel = 0;
+            }
             DBM.Save();
             return "Success";
     }
@@ -53,7 +57,7 @@ public class UpgradeHeroItem
 #if UNITY_EDITOR
     private IEnumerable<string> ListHeroId => DBM.Config.HeroConfigs.Keys;
 #endif
-    [JsonProperty]
-    public int level = 0;
+    [JsonProperty] public int level = 1;
+    [JsonProperty] public int subLevel = 0;
 }
 

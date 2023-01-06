@@ -1,0 +1,125 @@
+
+Richmouse.png
+size: 988,1940
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 632, 260
+  size: 394, 336
+  orig: 394, 336
+  offset: 0, 0
+  index: -1
+Lforearm
+  rotate: true
+  xy: 819, 1102
+  size: 176, 157
+  orig: 176, 157
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: false
+  xy: 632, 821
+  size: 157, 147
+  orig: 157, 147
+  offset: 0, 0
+  index: -1
+Lshin
+  rotate: true
+  xy: 855, 141
+  size: 117, 128
+  orig: 117, 128
+  offset: 0, 0
+  index: -1
+Lthigh
+  rotate: false
+  xy: 818, 939
+  size: 163, 161
+  orig: 163, 161
+  offset: 0, 0
+  index: -1
+Lupperarm
+  rotate: true
+  xy: 632, 656
+  size: 163, 126
+  orig: 163, 126
+  offset: 0, 0
+  index: -1
+Rforearm
+  rotate: false
+  xy: 632, 970
+  size: 184, 177
+  orig: 184, 177
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: true
+  xy: 819, 1280
+  size: 207, 140
+  orig: 207, 140
+  offset: 0, 0
+  index: -1
+Rshin
+  rotate: true
+  xy: 855, 25
+  size: 114, 121
+  orig: 114, 121
+  offset: 0, 0
+  index: -1
+Rthigh
+  rotate: true
+  xy: 791, 793
+  size: 144, 152
+  orig: 144, 152
+  offset: 0, 0
+  index: -1
+Rupperarm
+  rotate: false
+  xy: 819, 1489
+  size: 162, 180
+  orig: 162, 180
+  offset: 0, 0
+  index: -1
+back
+  rotate: true
+  xy: 2, 26
+  size: 572, 593
+  orig: 572, 593
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 600
+  size: 628, 547
+  orig: 628, 547
+  offset: 0, 0
+  index: -1
+hip
+  rotate: true
+  xy: 819, 1671
+  size: 264, 166
+  orig: 264, 166
+  offset: 0, 0
+  index: -1
+vfx/buff
+  rotate: false
+  xy: 597, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+vfx/buff_2
+  rotate: false
+  xy: 760, 663
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+weapon
+  rotate: false
+  xy: 2, 1149
+  size: 815, 786
+  orig: 815, 786
+  offset: 0, 0
+  index: -1

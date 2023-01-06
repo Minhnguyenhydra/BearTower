@@ -29,10 +29,6 @@ MonoBehaviour:
     m_Address: PanelOpener
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 0884025efeb2cc84589f5333dcdc9e79
-    m_Address: DBM
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 3f418dd7dced31b4887d5a947495ed7c
     m_Address: TopCanvas
     m_ReadOnly: 0
@@ -59,6 +55,14 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 8b8fb429460b14bc8ae0698940aa0973
     m_Address: UpgradePanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a5c68c47d81e64de3af9d34acd2c7c8d
+    m_Address: SettingPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a723de0e73114dafb3a02a957ce3200
+    m_Address: PausePanel
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -7,7 +7,6 @@ public class GamePlayMgr : MonoBehaviour
 {
     public static GamePlayMgr Instance;
     public List<TeamMgr> teams;
-    public ManaPool manaPool;
 
     private void Awake()
     {
@@ -25,13 +24,6 @@ public class GamePlayMgr : MonoBehaviour
     {
         Time.timeScale = 0;
         var isWin = teams[0].castle.Hp > 0;
-        Popup.Show(isWin ? "Victory" : "Defeat", "PlayAgain?", "Yes", () =>
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene(0);
-        }, "No", () =>
-        {
-            Application.Quit();
-        }, true);
+        ResultPanel.Show(isWin);
     }
 }

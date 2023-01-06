@@ -240,17 +240,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Endless
+  m_text: Map2 Thao Nguyen
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5d900a31b13f34fcaadaef2dd1f7dee4, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 2c02c3e458d4943998785d752bda6d82, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d84de43b9ba6745f6b7b3a2b9dad7052, type: 2}
+  m_sharedMaterial: {fileID: 1808933353337600082, guid: d84de43b9ba6745f6b7b3a2b9dad7052,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288929525
-  m_fontColor: {r: 0.9622642, g: 0.8724985, b: 0.63999647, a: 1}
+    rgba: 4282736030
+  m_fontColor: {r: 0.61960787, g: 0.3647059, b: 0.27058825, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -267,8 +268,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -631,14 +632,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 8c2c76f291d87be40877fd8fddb960f2, type: 2}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+      - m_Target: {fileID: -6233478721582923371}
+        m_TargetAssemblyTypeName: SelectModePanel, Assembly-CSharp
+        m_MethodName: OnClickCampaign
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: Game
           m_BoolArgument: 0
@@ -765,10 +766,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 8c2c76f291d87be40877fd8fddb960f2, type: 2}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+      - m_Target: {fileID: -6233478721582923371}
+        m_TargetAssemblyTypeName: SelectModePanel, Assembly-CSharp
+        m_MethodName: OnClickCampaign
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -843,19 +844,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Arena
-
-'
+  m_text: Map3 Nui Lua
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5d900a31b13f34fcaadaef2dd1f7dee4, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 2c02c3e458d4943998785d752bda6d82, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d84de43b9ba6745f6b7b3a2b9dad7052, type: 2}
+  m_sharedMaterial: {fileID: 1808933353337600082, guid: d84de43b9ba6745f6b7b3a2b9dad7052,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288929525
-  m_fontColor: {r: 0.9622642, g: 0.8724985, b: 0.63999647, a: 1}
+    rgba: 4282736030
+  m_fontColor: {r: 0.61960787, g: 0.3647059, b: 0.27058825, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -872,8 +872,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1075,14 +1075,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 8c2c76f291d87be40877fd8fddb960f2, type: 2}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenToast
-        m_Mode: 5
+      - m_Target: {fileID: -6233478721582923371}
+        m_TargetAssemblyTypeName: SelectModePanel, Assembly-CSharp
+        m_MethodName: OnClickCampaign
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: Coming Soon!
           m_BoolArgument: 0
@@ -1274,17 +1274,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Campaign
+  m_text: Map1 Samac
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5d900a31b13f34fcaadaef2dd1f7dee4, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 2c02c3e458d4943998785d752bda6d82, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d84de43b9ba6745f6b7b3a2b9dad7052, type: 2}
+  m_sharedMaterial: {fileID: 1808933353337600082, guid: d84de43b9ba6745f6b7b3a2b9dad7052,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288929525
-  m_fontColor: {r: 0.9622642, g: 0.8724985, b: 0.63999647, a: 1}
+    rgba: 4282736030
+  m_fontColor: {r: 0.61960787, g: 0.3647059, b: 0.27058825, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1301,8 +1302,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

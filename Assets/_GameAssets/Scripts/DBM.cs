@@ -30,12 +30,24 @@ public class ListReplacementUserContractResolver : DefaultContractResolver
 [CreateAssetMenu(fileName = "DBM",menuName = "SO/DBM")]
 public class DBM : ScriptableObject
 {
+    [ShowInInspector]
     private static DBM _instance;
     private static DBM Instance
     {
         get
         {
-            if (_instance == null) _instance = Addressables.LoadAssetAsync<DBM>(nameof(DBM)).WaitForCompletion();
+            if (_instance == null){
+                _instance = Instantiate(Resources.Load<DBM>(nameof(DBM)));//.LoadAssetAsync<DBM>(nameof(DBM)).WaitForCompletion();
+                if (PlayerPrefs.GetString(nameof(UserData), "") != "")
+                {
+                    _instance._userData = JsonConvert.DeserializeObject<UserData>(
+                        PlayerPrefs.GetString(nameof(UserData), ""),
+                        new JsonSerializerSettings()
+                        {
+                            ContractResolver = new ListReplacementUserContractResolver()
+                        });
+                }
+            }
             return _instance;
         }
     }
@@ -43,32 +55,8 @@ public class DBM : ScriptableObject
     public static Config Config => Instance.config;
     // [SerializeField] private UserData initUserData;
     [SerializeField] private UserData _userData;
-      public static UserData UserData
-      {
-          get
-          {
-              // if (Instance._userData == null)
-              // {
-              //     if (PlayerPrefs.GetString(nameof(UserData), "") == "")
-              //     {
-              //         var str = JsonConvert.SerializeObject(Instance.initUserData, new JsonSerializerSettings()
-              //         {
-              //             ContractResolver = new ListReplacementUserContractResolver()
-              //         });
-              //         Debug.Log(str);
-              //         PlayerPrefs.SetString(nameof(UserData), str);
-              //     }
-              //     Instance._userData = JsonConvert.DeserializeObject<UserData>(
-              //         PlayerPrefs.GetString(nameof(UserData), ""),
-              //         new JsonSerializerSettings()
-              //         {
-              //             ContractResolver = new ListReplacementUserContractResolver()
-              //         });
-              // }
+      public static UserData UserData => Instance._userData;
 
-              return Instance._userData;
-          }
-      }
       public static void Save()
     {
         var str = JsonConvert.SerializeObject(Instance._userData, new JsonSerializerSettings()

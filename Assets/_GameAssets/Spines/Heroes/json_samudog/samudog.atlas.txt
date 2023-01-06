@@ -1,0 +1,230 @@
+
+samudog.png
+size: 2664,1080
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Hip
+  rotate: false
+  xy: 1078, 195
+  size: 285, 195
+  orig: 285, 195
+  offset: 0, 0
+  index: -1
+Larmor
+  rotate: true
+  xy: 2121, 463
+  size: 305, 270
+  orig: 305, 270
+  offset: 0, 0
+  index: -1
+Lfoot
+  rotate: false
+  xy: 2121, 780
+  size: 116, 95
+  orig: 116, 95
+  offset: 0, 0
+  index: -1
+Lforearm
+  rotate: false
+  xy: 1824, 206
+  size: 214, 223
+  orig: 214, 223
+  offset: 0, 0
+  index: -1
+Lhand
+  rotate: true
+  xy: 2415, 59
+  size: 162, 151
+  orig: 162, 151
+  offset: 0, 0
+  index: -1
+Lhiparmor
+  rotate: false
+  xy: 1480, 19
+  size: 242, 183
+  orig: 242, 183
+  offset: 0, 0
+  index: -1
+Llegarmor
+  rotate: true
+  xy: 177, 3
+  size: 143, 125
+  orig: 143, 125
+  offset: 0, 0
+  index: -1
+Lshin
+  rotate: true
+  xy: 2040, 212
+  size: 217, 228
+  orig: 217, 228
+  offset: 0, 0
+  index: -1
+Lthigh
+  rotate: false
+  xy: 1365, 204
+  size: 232, 186
+  orig: 232, 186
+  offset: 0, 0
+  index: -1
+Lupperarm
+  rotate: false
+  xy: 1599, 206
+  size: 223, 223
+  orig: 223, 223
+  offset: 0, 0
+  index: -1
+Mhiparmor
+  rotate: false
+  xy: 685, 2
+  size: 184, 176
+  orig: 184, 176
+  offset: 0, 0
+  index: -1
+Rarmarmor
+  rotate: true
+  xy: 2393, 481
+  size: 287, 267
+  orig: 287, 267
+  offset: 0, 0
+  index: -1
+Rfoot
+  rotate: true
+  xy: 2568, 69
+  size: 152, 73
+  orig: 152, 73
+  offset: 0, 0
+  index: -1
+Rfoot copy
+  rotate: true
+  xy: 2270, 307
+  size: 154, 74
+  orig: 154, 74
+  offset: 0, 0
+  index: -1
+Rforearm
+  rotate: true
+  xy: 1724, 22
+  size: 182, 147
+  orig: 182, 147
+  offset: 0, 0
+  index: -1
+Rhand
+  rotate: false
+  xy: 536, 19
+  size: 147, 127
+  orig: 147, 127
+  offset: 0, 0
+  index: -1
+Rhiparmor
+  rotate: false
+  xy: 2121, 978
+  size: 147, 100
+  orig: 147, 100
+  offset: 0, 0
+  index: -1
+Rhiparmor copy
+  rotate: false
+  xy: 2, 2
+  size: 173, 144
+  orig: 173, 144
+  offset: 0, 0
+  index: -1
+Rlegarmor
+  rotate: false
+  xy: 2121, 877
+  size: 123, 99
+  orig: 123, 99
+  offset: 0, 0
+  index: -1
+Rlegarmor copy
+  rotate: true
+  xy: 304, 14
+  size: 132, 100
+  orig: 132, 100
+  offset: 0, 0
+  index: -1
+Rshin
+  rotate: false
+  xy: 871, 5
+  size: 190, 173
+  orig: 190, 173
+  offset: 0, 0
+  index: -1
+Rshin copy
+  rotate: false
+  xy: 1063, 11
+  size: 199, 167
+  orig: 199, 167
+  offset: 0, 0
+  index: -1
+Rthigh
+  rotate: false
+  xy: 1873, 24
+  size: 270, 180
+  orig: 270, 180
+  offset: 0, 0
+  index: -1
+Rthigh copy
+  rotate: false
+  xy: 2145, 30
+  size: 268, 180
+  orig: 268, 180
+  offset: 0, 0
+  index: -1
+Rupperarm
+  rotate: true
+  xy: 1264, 6
+  size: 187, 214
+  orig: 187, 214
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 2270, 770
+  size: 308, 363
+  orig: 308, 363
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 1501, 431
+  size: 647, 618
+  orig: 647, 618
+  offset: 0, 0
+  index: -1
+scabbard
+  rotate: true
+  xy: 1078, 392
+  size: 686, 421
+  orig: 686, 421
+  offset: 0, 0
+  index: -1
+shashimono
+  rotate: false
+  xy: 2, 148
+  size: 598, 930
+  orig: 598, 930
+  offset: 0, 0
+  index: -1
+sword
+  rotate: true
+  xy: 602, 180
+  size: 898, 474
+  orig: 898, 474
+  offset: 0, 0
+  index: -1
+vfx/buff
+  rotate: false
+  xy: 2393, 223
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+vfx/buff_2
+  rotate: false
+  xy: 406, 18
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

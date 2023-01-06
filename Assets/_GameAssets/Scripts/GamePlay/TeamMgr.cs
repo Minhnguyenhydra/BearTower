@@ -15,7 +15,6 @@ public class TeamMgr : MonoBehaviour
     {
         Back,
         Defense,
-        TakeManaPool,
         Attack
     }
     public StateMachine<State> fsm;
@@ -23,47 +22,24 @@ public class TeamMgr : MonoBehaviour
     [ShowInInspector]
     public State CurState
     {
-        get => fsm!=null?fsm.State:State.Back;
+        get => fsm?.State ?? State.Back;
         set => fsm.ChangeState(value);
     }
 
-    [SerializeField,HideInInspector] private float gold=500;
-    public Action onGoldChange;
-    [ShowInInspector]
-    public float Gold
-    {
-        get => gold;
-        set
-        {
-            gold = value;
-            onGoldChange?.Invoke();
-        }
-    }
-    [SerializeField,HideInInspector] private float mana;
-    public Action onManaChange;
-    [ShowInInspector]
-    public float Mana
-    {
-        get => mana;
-        set
-        {
-            mana = value;
-            onManaChange?.Invoke();
-        }
-    }
+    public NotiVar<float> crystal = new NotiVar<float>(500);
+    
     public List<Hero> listHero = new List<Hero>();
     public Action onListHeroChange;
     public int maxPopulation=50;
 
     public Castle castle;
-    public GoldMine[] goldMines;
+    public CrystalMine[] goldMines;
     public Fence fence;
     
     public List<TrainingProcess> trainingProcesses = new List<TrainingProcess>();
-    
     public List<UpgradeHeroItem> dataUpgradeHero=new List<UpgradeHeroItem>();
     
-    [SerializeField] private HUDPanel hudPanel; //là tự điều khiển
+    public HUDPanel hudPanel; //là tự điều khiển
     private ITeamControl _teamControl;
     public ITeamControl TeamControl
     {
@@ -127,13 +103,12 @@ public class TeamMgr : MonoBehaviour
         foreach (var state in Enum.GetValues(typeof(State)).Cast<State>())
         {
             var p1 = castle.transform.position.x;
-            var manaPool = GamePlayMgr.Instance.manaPool;
-            var p2 = state switch
-            {
-                State.Defense => manaPool.transform.position.x - manaPool.range * FaceDirection,
-                State.TakeManaPool => manaPool.transform.position.x + manaPool.range * FaceDirection,
-                _ => enemyTeam.castle.transform.position.x
-            };
+            //var manaPool = GamePlayMgr.Instance.manaPool;
+            var p2 = enemyTeam.castle.transform.position.x;//state switch
+            // {
+            //     State.Defense => manaPool.transform.position.x - manaPool.range * FaceDirection,
+            //     => enemyTeam.castle.transform.position.x
+            // };
             RangeFindEnemy.Add(state, new Vector2(Mathf.Min(p1, p2), Mathf.Max(p1, p2)));
             Debug.Log(state+":"+ RangeFindEnemy[state]);
         }
@@ -166,7 +141,7 @@ public class TeamMgr : MonoBehaviour
 
     private void SetupIdlePosition()
     {
-        if (CurState is State.Defense or State.TakeManaPool)
+        if (CurState is State.Defense)
         {
             var dictHero = new Dictionary<Hero.AttackType, List<Hero>>
             {
@@ -197,7 +172,7 @@ public class TeamMgr : MonoBehaviour
                         var offSet =
                             new Vector3(-(curRow + 2) * spaceRow + FaceDirection*col * spaceCol / 2f,
                                 maxCol * spaceCol * (1f * col / numOfCol - 0.5f), 0);
-                        heroes[row * maxCol + col].idlePosition = (CurState is State.TakeManaPool ? GamePlayMgr.Instance.manaPool.transform.position : fence.transform.position) + FaceDirection * offSet;
+                        heroes[row * maxCol + col].idlePosition =  fence.transform.position + FaceDirection * offSet;
                     }
 
                     curRow++;

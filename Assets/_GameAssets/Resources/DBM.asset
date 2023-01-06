@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f808fd930cf8802408c3d5ccc0353e62, type: 3}
+  m_Name: DBM
+  m_EditorClassIdentifier: 
+  config:
+    listHero:
+    - icon: {fileID: 21300000, guid: 98f672b03af954236aacb0b0fc7206bd, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: 81195d2dd168cee4f862a5d0b4ed9973,
+        type: 3}
+      timeTraining: 2
+      priceCrystalTraining: 50
+    - icon: {fileID: 21300000, guid: dc1e7447fd61d48918b1fb25f86acf1c, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: 3fcb0bd8c298c434999c548a5fdc105b,
+        type: 3}
+      timeTraining: 2
+      priceCrystalTraining: 60
+    - icon: {fileID: 21300000, guid: b7de9035e09584b4b932defed6f53453, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: 0e24678ce9f3c3e4682f2db99e40c082,
+        type: 3}
+      timeTraining: 3
+      priceCrystalTraining: 70
+    - icon: {fileID: 21300000, guid: 4ee7e8cdc104c46a880af61d5b6be127, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: 1f623c13612a6a2458b46c53f8ef578d,
+        type: 3}
+      timeTraining: 5
+      priceCrystalTraining: 80
+    - icon: {fileID: 21300000, guid: 78c8ed4de18694ff6bb857112eed98b4, type: 3}
+      prefab: {fileID: 8276852377713990523, guid: fdc08a24d3f1003419d941471eeb0278,
+        type: 3}
+      timeTraining: 4
+      priceCrystalTraining: 90
+    shop:
+      listItem:
+      - icon: {fileID: 21300000, guid: 14481386072824e7d9cdd951e9c215f3, type: 3}
+        type: 1
+        value: 10
+        price: 0
+      - icon: {fileID: 21300000, guid: 14481386072824e7d9cdd951e9c215f3, type: 3}
+        type: 1
+        value: 20
+        price: 0
+      - icon: {fileID: 21300000, guid: 14481386072824e7d9cdd951e9c215f3, type: 3}
+        type: 1
+        value: 30
+        price: 0
+      - icon: {fileID: 21300000, guid: 14481386072824e7d9cdd951e9c215f3, type: 3}
+        type: 1
+        value: 40
+        price: 0
+      - icon: {fileID: 21300000, guid: 14481386072824e7d9cdd951e9c215f3, type: 3}
+        type: 1
+        value: 50
+        price: 0
+      - icon: {fileID: 21300000, guid: cef7024830550451e8b39545822fc7a3, type: 3}
+        type: 0
+        value: 10
+        price: 10
+      - icon: {fileID: 21300000, guid: cef7024830550451e8b39545822fc7a3, type: 3}
+        type: 0
+        value: 20
+        price: 20
+      - icon: {fileID: 21300000, guid: cef7024830550451e8b39545822fc7a3, type: 3}
+        type: 0
+        value: 30
+        price: 30
+      - icon: {fileID: 21300000, guid: cef7024830550451e8b39545822fc7a3, type: 3}
+        type: 0
+        value: 40
+        price: 40
+      - icon: {fileID: 21300000, guid: 85865f4350e7fc64484eb399b7839c35, type: 3}
+        type: 0
+        value: 500
+        price: 50
+    upgrade:
+      priceList: 64000000c80000002c010000
+  _userData:
+    listResources:
+    - type: 0
+      value: 120
+    - type: 1
+      value: 0
+    upgrade:
+      listHero:
+      - heroId: Miner
+        level: 1
+        subLevel: 0
+      - heroId: Sword
+        level: 1
+        subLevel: 0
+      - heroId: Archer
+        level: 1
+        subLevel: 0
+      - heroId: Tanker
+        level: 1
+        subLevel: 0
+      - heroId: Healer
+        level: 1
+        subLevel: 0

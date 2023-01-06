@@ -21,6 +21,5 @@ public class HeroConfig
     public Sprite icon;
     public Hero prefab;
     public float timeTraining = 1;
-    public int priceGoldTraining;
-    public int priceManaTraining;
+    public int priceCrystalTraining;
 }

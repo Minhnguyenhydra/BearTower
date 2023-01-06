@@ -14,14 +14,15 @@ public class ShopPanel : Panel
         {
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() => OnClickItemShop(item));
-            button.transform.GetChild(0).GetComponent<Image>().sprite = item.icon;
-            button.GetComponentInChildren<TMP_Text>().text =item.price==0?"IAP":item.price.ToString();
+            button.transform.GetChild(2).GetComponent<Image>().sprite = item.icon;
+            button.GetComponentInChildren<TMP_Text>().text = item.value+" "+item.type;
+            button.transform.GetChild(3).GetComponentInChildren<TMP_Text>().text =item.price==0?"IAP":(item.price+" Gem");
         });
     }
 
     private void OnClickItemShop(ShopItem item)
     {
         var success = item.Buy();
-        if (!success) Toast.Show("Can't buy");
+        Toast.Show(success ? "Success!" : "Can't buy");
     }
 }

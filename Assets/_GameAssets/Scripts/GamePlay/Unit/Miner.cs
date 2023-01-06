@@ -4,17 +4,17 @@ using UnityEngine;
 public class Miner : Hero
 {
     public CharacterStat capacity = new CharacterStat(50);
-    private float _goldHolding;
-    private GoldMine _curGoldMine;
+    private float _crystalHolding;
+    private CrystalMine _curCrystalMine;
     private float _lastTimeAttack;
     private Vector3 _goldMineStandPosition;
     protected override void Idle_Update()
     {
         if (team.CurState is not TeamMgr.State.Back)
         {
-            if ((_curGoldMine == null || _curGoldMine.Gold == 0) && Time.frameCount % 60 == 0)
-                _curGoldMine = FindGoldMine();
-            if (_curGoldMine != null) fsm.ChangeState(State.Move);
+            if ((_curCrystalMine == null || _curCrystalMine.Value == 0) && Time.frameCount % 60 == 0)
+                _curCrystalMine = FindGoldMine();
+            if (_curCrystalMine != null) fsm.ChangeState(State.Move);
         }
     }
 
@@ -22,7 +22,7 @@ public class Miner : Hero
     {
         if (team.CurState != TeamMgr.State.Back)
         {
-            if (_goldHolding < capacity.Value && _curGoldMine.Gold>0) //di ra mo vang
+            if (_crystalHolding < capacity.Value && _curCrystalMine.Value>0) //di ra mo vang
             {
                 if (MoveToPos(_goldMineStandPosition))
                 {
@@ -43,7 +43,7 @@ public class Miner : Hero
     protected override void Attack_Enter()
     {
         base.Attack_Enter();
-        var dir = _curGoldMine.transform.position - transform.position;
+        var dir = _curCrystalMine.transform.position - transform.position;
         transform.GetChild(0).localScale = new Vector3(-Mathf.Sign(dir.x), 1, 1);
     }
 
@@ -61,30 +61,30 @@ public class Miner : Hero
     }
     protected override void Attack()
     {
-        var goldAdd = Mathf.Min(atk.Value, capacity.Value - _goldHolding, _curGoldMine.Gold);
-        _goldHolding += goldAdd;
-        _curGoldMine.Gold -= goldAdd;
-        if (_goldHolding >= capacity.Value || _curGoldMine.Gold == 0)
+        var goldAdd = Mathf.Min(atk.Value, capacity.Value - _crystalHolding, _curCrystalMine.Value);
+        _crystalHolding += goldAdd;
+        _curCrystalMine.Value -= goldAdd;
+        if (_crystalHolding >= capacity.Value || _curCrystalMine.Value == 0)
             fsm.ChangeState(State.Move);
     }
 
     protected override void Dead_Enter()
     {
-        if (_curGoldMine != null) _curGoldMine.slots.Remove(this);
+        if (_curCrystalMine != null) _curCrystalMine.slots.Remove(this);
         base.Dead_Enter();
     }
     private void MoveToCastle()
     {
         if (MoveToPos(team.castle.transform.position))
         {
-            team.Gold += _goldHolding;
-            _goldHolding = 0;
+            team.crystal.Value += _crystalHolding;
+            _crystalHolding = 0;
             fsm.ChangeState(State.Idle);
         }
     }
-    private GoldMine FindGoldMine()
+    private CrystalMine FindGoldMine()
     {
-        var res=team.goldMines.FirstOrDefault(goldMine => goldMine.Gold > 0 && goldMine.slots.Count < 2);
+        var res=team.goldMines.FirstOrDefault(mine => mine.Value > 0 && mine.slots.Count < 2);
         if (res != null)
         {
             res.slots.Add(this);

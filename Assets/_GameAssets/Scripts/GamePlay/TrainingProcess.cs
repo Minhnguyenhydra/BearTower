@@ -18,43 +18,16 @@ public class TrainingProcess
     public TeamMgr team;
     public UpgradeHeroItem upgradeInfo;
     public HeroConfig heroConfig;
-    private int _queueCount;
-    public Action onQueueCountChanged;
-    public int QueueCount
-    {
-        get => _queueCount;
-        private set
-        {
-            _queueCount = value;
-            onQueueCountChanged?.Invoke();
-        }
-    }
-
-    public int TotalQueueCount => team.trainingProcesses.Sum(p => p.QueueCount);
-
-    private float _coolDown;
-    public Action onCoolDownChanged;
-    public float CoolDown
-    {
-        get => _coolDown;
-        private set
-        {
-            _coolDown = value;
-            onCoolDownChanged?.Invoke();
-        }
-    }
-    public Action onNotEnoughGold;
-    public Action onNotEnoughMana;
+    public NotiVar<int> queueCount = new NotiVar<int>();
+    public int TotalQueueCount => team.trainingProcesses.Sum(p => p.queueCount.Value);
+    public NotiVar<float> coolDown = new NotiVar<float>();
     public Action onMaxPopulation;
-    public bool AddTrain()
+    public Action onNotEnoughCrystal;
+    public void AddTrain()
     {
-        if (team.Gold < heroConfig.priceGoldTraining)
+        if (team.crystal.Value < heroConfig.priceCrystalTraining)
         {
-            onNotEnoughGold?.Invoke();
-        }
-        else if (team.Mana < heroConfig.priceManaTraining)
-        {
-            onNotEnoughMana?.Invoke();
+            onNotEnoughCrystal?.Invoke();
         }
         else if (team.listHero.Count + TotalQueueCount >= team.maxPopulation)
         {
@@ -62,36 +35,31 @@ public class TrainingProcess
         }
         else
         {
-            team.Gold -= heroConfig.priceGoldTraining;
-            team.Mana -= heroConfig.priceManaTraining;
-            QueueCount++;
-            if (QueueCount == 1) _trainingCor = team.StartCoroutine(Train());
-            return true;
+            team.crystal.Value -= heroConfig.priceCrystalTraining;
+            queueCount.Value++;
+            if (queueCount.Value == 1) _trainingCor = team.StartCoroutine(Train());
         }
-
-        return false;
     }
     public void RemoveTrain()
     {
-        team.Gold += heroConfig.priceGoldTraining;
-        team.Mana += heroConfig.priceManaTraining;
-        QueueCount--;
-        if (QueueCount == 0) team.StopCoroutine(_trainingCor);
+        team.crystal.Value += heroConfig.priceCrystalTraining;
+        queueCount.Value--;
+        if (queueCount.Value == 0) team.StopCoroutine(_trainingCor);
     }
     private Coroutine _trainingCor;
     private IEnumerator Train()
     {
-        while (QueueCount > 0)
+        while (queueCount.Value > 0)
         {
-            CoolDown = heroConfig.timeTraining;
-            while (CoolDown>0)
+            coolDown.Value = heroConfig.timeTraining;
+            while (coolDown.Value>0)
             {
                 yield return null;
-                CoolDown -= Time.deltaTime;
+                coolDown.Value -= Time.deltaTime;
             }
-            CoolDown = 0;
+            coolDown.Value = 0;
             SpawnHero();
-            QueueCount--;
+            queueCount.Value--;
         }
     }
     [Button]

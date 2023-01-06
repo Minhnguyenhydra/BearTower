@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using _GameAssets.Scripts;
@@ -10,11 +11,19 @@ using UnityEngine;
 public class HUDPanel : Panel,ITeamControl
 {
     public Transform trainingBtnContainer;
-    [SerializeField] private TMP_Text txtGold;
-    [SerializeField] private TMP_Text txtMana;
+    [SerializeField] private TMP_Text txtCrystal;
     [SerializeField] private TMP_Text txtPopulation;
     [SerializeField] private List<LeanToggle> toggleStates;
     public TeamMgr Team { get; set; }
+
+    public static int SelectedMap;
+    [SerializeField] private GamePlayMgr[] maps;
+
+    private void Start()
+    {
+        var map=Instantiate(maps[SelectedMap]);
+        map.teams[0].hudPanel = this;
+    }
 
     public void Init(TeamMgr team)
     {
@@ -27,18 +36,15 @@ public class HUDPanel : Panel,ITeamControl
         trainingBtnContainer.FillData<TrainingProcess, ButtonTraining>(Team.trainingProcesses, (data, btn, idx) =>
         {
             btn.Setup(data);
-            data.onNotEnoughGold += NotEnoughGold;
-            data.onNotEnoughMana += NotEnoughMana;
+            data.onNotEnoughCrystal += NotEnoughGold;
             data.onMaxPopulation += MaxPopulation;
         });
         Team.fsm.Changed += FsmOnChanged;
         Team.onListHeroChange += ListHeroChanged;
-        Team.onGoldChange += GoldChanged;
-        Team.onManaChange += ManaChanged;
+        Team.crystal.onValueChanged += CrystalChanged;
         FsmOnChanged(Team.CurState);
         ListHeroChanged();
-        GoldChanged();
-        ManaChanged();
+        CrystalChanged();
     }
 
     private void FsmOnChanged(TeamMgr.State state)
@@ -51,27 +57,17 @@ public class HUDPanel : Panel,ITeamControl
     }
     private void NotEnoughGold()
     {
-        Toast.Show("Not Enough Gold");
-        txtGold.DOColor(Color.red, 0.2f).From(Color.yellow).SetLoops(2, LoopType.Yoyo);
-    }
-    private void NotEnoughMana()
-    {
-        Toast.Show("Not Enough Mana");
-
-        txtMana.DOColor(Color.red, 0.2f).From(Color.blue).SetLoops(2, LoopType.Yoyo);
+        Toast.Show("Not Enough Crystal");
+        txtCrystal.DOColor(Color.red, 0.2f).From(new Color(0.82f,0.82f,0.82f)).SetLoops(2, LoopType.Yoyo);
     }
     private void MaxPopulation()
     {
         Toast.Show("Reach max population");
-        txtPopulation.DOColor(Color.red, 0.2f).From(Color.gray).SetLoops(2, LoopType.Yoyo);
+        txtPopulation.DOColor(Color.red, 0.2f).From(new Color(0.82f,0.82f,0.82f)).SetLoops(2, LoopType.Yoyo);
     }
-    private void GoldChanged()
+    private void CrystalChanged()
     {
-        txtGold.text = Team.Gold.ToString();
-    }
-    private void ManaChanged()
-    {
-        txtMana.text = Team.Mana.ToString();
+        txtCrystal.text = Team.crystal.ToString();
     }
 
     public void OnClickChangeState(int state)
@@ -109,26 +105,16 @@ public class HUDPanel : Panel,ITeamControl
         base.OnDestroy();
         Team.fsm.Changed -= FsmOnChanged;
         Team.onListHeroChange -= ListHeroChanged;
-        Team.onGoldChange -= GoldChanged;
-        Team.onManaChange -= ManaChanged;
+        Team.crystal.onValueChanged -= CrystalChanged;
         foreach (var data in Team.trainingProcesses)
         {
-            data.onNotEnoughGold -= NotEnoughGold;
-            data.onNotEnoughMana -= NotEnoughMana;
+            data.onNotEnoughCrystal -= NotEnoughGold;
             data.onMaxPopulation -= MaxPopulation;
         }
     }
     public override void BackClick()
     {
-        Time.timeScale = 0;
-        Popup.Show("Pause","Continue?","Continue", () =>
-        {
-            Time.timeScale = 1;
-        },"Main Menu",()=>
-        {
-            Time.timeScale = 1;
-            SceneTransition.ChangeScene("MainMenu");
-        },true);
+        Open<PausePanel>();
     }
 
 }

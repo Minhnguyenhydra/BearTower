@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "a618a37f",
         "name": "com.BearTower.BearTower",
-        "processId": 9370,
+        "processId": 29707,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -48,6 +48,18 @@
             "deviceId": "a618a37f",
             "name": "com.BearTower.BearTower",
             "processId": 9370,
+            "exited": false
+        },
+        {
+            "deviceId": "a618a37f",
+            "name": "com.BearTower.BearTower",
+            "processId": 27787,
+            "exited": false
+        },
+        {
+            "deviceId": "a618a37f",
+            "name": "com.BearTower.BearTower",
+            "processId": 29707,
             "exited": false
         }
     ],
